@@ -1,0 +1,120 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon {
+    font-size: 28px;
+}
+
+.left h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.left p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress {
+    width: 120px;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: linear-gradient(to right, #1e90ff, #2dd4bf);
+    width: 0;
+    transition: width 1s ease;
+}
+
+.percent {
+    font-size: 14px;
+    color: #475569;
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    
+    
+}
+
+.btn-orange {
+    background: #f97316;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-orange:hover {
+    background: #ea580c;
+    transform: scale(1.05);
+}
+
+.btn-light {
+    background: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-light:hover {
+    background: #f3f4f6;
+    transform: scale(1.05);
+}
