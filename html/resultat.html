@@ -4,11 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Résultats - Orientation</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/resultat.css">
 </head>
 
 <body>
-
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Ori<span>ceft</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./accueil.html">Accueil</a></li>
+                <li><a href="./index.html">Orientation</a></li>
+                <li><a href="./filiere.html">Filières</a></li>
+                <li><a href="./resultat.html">Résultats</a></li>
+                <li><a href="./contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
     <div class="container">
 
         <h1>Tous les résultats</h1>
@@ -139,10 +159,14 @@
         </div>
 
 
+    </div>
 
-
-
-        <script src="../js/resultat.js"></script>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><strong>Oriceft</strong> — Douala, Cameroun</p>
+        <p style="margin-top:8px">© 2026 Oriceft. Tous droits réservés.</p>
+    </footer>
+    <script src="../js/resultat.js"></script>
 </body>
 
 </html>
