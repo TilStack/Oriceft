@@ -32,6 +32,209 @@
     </nav>
 
 
+    <div class="topMenu">
+        <button onclick="ouvrirMenu('general')">Généraliste</button>
+        <button onclick="ouvrirMenu('tech')">Technicien</button>
+        <button onclick="ouvrirMenu('com')">Commercial</button>
+    </div>
+
+    <main>
+        <div class="gauche" id="menuGauche"></div>
+        <div class="droite" id="info">
+            <h2>INFORMATIONS</h2>
+            <p>Clique sur une filière pour voir les informations et débouchés.</p>
+        </div>
+    </main>
+
+    <script>
+        let typeChoisi = "";
+
+
+        function ouvrirMenu(type) {
+            typeChoisi = type;
+            const menu = document.getElementById("menuGauche");
+            menu.style.display = "block";
+
+            menu.innerHTML = `
+        <div class="cycle">
+            <h3 onclick="ouvrirCycle(1)">1er Cycle</h3>
+            <div id="cycle1"></div>
+        </div>
+        <div class="cycle">
+            <h3 onclick="ouvrirCycle(2)">2e Cycle</h3>
+            <div id="cycle2"></div>
+        </div>
+    `;
+
+
+            document.getElementById("info").innerHTML = `
+        <h2>Orientation scolaire</h2>
+        <p>Clique sur une filière pour voir les informations et débouchés.</p>
+    `;
+        }
+
+        function ouvrirCycle(n) {
+            const zone = document.getElementById("cycle" + n);
+
+
+            if (zone.innerHTML.trim() !== "") {
+                zone.innerHTML = "";
+                return;
+            }
+
+
+            if (n === 2) {
+                if (typeChoisi === "general") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('Série A','Etude des langues, littérature et philosophie.','Droit, journalisme, enseignement')">Série A</div>
+                <div class="filiere" onclick="infoFoliere('Série A5','Etude de langue national, litterature et langue.','Droit,')">Série A5</div>
+                <div class="filiere" onclick="infoFiliere('Série C','Mathématiques et sciences physiques avancées.','Écoles ingénieurs, informatique, architecture')">Série C</div>
+                <div class="filiere" onclick="infoFiliere('Série D','Sciences de la vie et de la terre.',' medecin, pharmacie, topologie')">Série D</div>
+                <div class="filiere" onclick="infoFiliere('Série E','Mathématiques et technologie.','Ingénieur, maintenance industrielle')">Série E</div>
+                <div class="filiere" onclick="infoFiliere('Série SH','Sciences humaines et sociales.','Sociologie, psychologie, RH')">Série SH</div>
+                <div class="filiere" onclick="infoFiliere('TI Informatique','Programmation et réseaux.','Développeur, technicien réseau')">TI</diV>
+                    
+            `;
+                } else if (typeChoisi === "tech") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('F1 Construction mécanique','Conception et maintenance des systèmes mécaniques.','Maintenance industrielle, construction métallique')">F1</div>
+                <div class="filiere" onclick="infoFiliere('F2 Electronique','Circuits électroniques et systèmes communication.','Maintenance électronique, telecom')">F2</div>
+                <div class="filiere" onclick="infoFiliere('F3 Electrotechnique','Production et distribution énergie électrique.','Électricien industriel')">F3</div>
+                <div class="filiere" onclick="infoFiliere('F4 Génie Civil','Construction bâtiments et infrastructures.','Technicien BTP, chef de chantier')">F4</div>
+                <div class="filiere" onclick="infoFiliere('F5 Laboratoire','Analyse chimique et physique.','Technicien laboratoire')">F5</div>
+                <div class="filiere" onclick="infoFiliere('F7 Biochimie','Étude processus biologiques.','Laboratoire médical')">F7</div>
+                <div class="filiere" onclick="infoFiliere('F8 Médico social','Formation santé sociale.','Assistant social')">F8</div>
+                <div class="filiere" onclick="infoFiliere('Mécanique Automobile','Réparation automobile.','Mécanicien')">BT MA</div>
+                <div class="filiere" onclick="infoFiliere('Menuiserie Bois','Fabrication meubles bois.','Menuisier')">BT CI</div>
+                <div class="filiere" onclick="infoFiliere('Couture','Fabrication vêtements.','Styliste')">BT IH</div>
+                <div class="filiere" onclick="infoFiliere('Économie Familiale','Gestion foyer.','Conseiller social')">BT ESF</div>
+                <div class="filiere" onclick="infoFiliere('Froid Climatisation','Installation climatisation.','Frigoriste')">Climatisation</div>
+                <div class="filiere" onclick="infoFiliere('Plomberie','Installation eau.','Plombier')">Plomberie</div>
+                <div class="filiere" onclick="infoFiliere('Soudure','Assemblage métal.','Soudeur')">Soudure</div>
+                <div class="filiere" onclick="infoFiliere('Topographie','Mesures terrain.','Géomètre')">Topographie</div>
+            `;
+                } else if (typeChoisi === "com") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('Comptabilité CG','Techniques comptables et financières.','Comptable, banquier')">CG</div>
+                <div class="filiere" onclick="infoFiliere('Marketing ACC','Techniques vente et publicité.','Commercial, marketing')">ACC</div>
+                <div class="filiere" onclick="infoFiliere('Secrétariat ACA','Gestion administrative.','Secrétaire direction')">ACA</div>
+                <div class="filiere" onclick="infoFiliere('Fiscalité FIG','Gestion fiscale.','Fiscaliste')">FIG</div>
+                <div class="filiere" onclick="infoFiliere('SES','Étude économie et société.','Économie, droit')">SES</div>
+            
+            `;
+                }
+            }
+        }
+
+
+        function infoFiliere(titre, description, debouche) {
+            const zone = document.getElementById("info");
+            zone.innerHTML = `
+        <h2>${titre}</h2>
+        <h3>Description</h3>
+        <p>${description}</p>
+        <h3>Débouchés</h3>
+        <p>${debouche}</p>
+    `;
+        }
+
+        function ouvrirCycle(n) {
+            const zone = document.getElementById("cycle" + n);
+            zone.innerHTML = "";
+
+            if (n === 1) {
+                if (typeChoisi === "tech") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('Electricité','Apprentissage des bases de l’installation électrique (prises, câblage, interrupteurs).','Électricien bâtiment, installateur électrique, poursuite en électrotechnique au 2nd cycle')">Electricité</div>
+                <div class="filiere" onclick="infoFiliere('Electronique','Initiation aux composants électroniques (résistances, diodes, etc.).','Réparateur d’appareils électroniques, poursuite en F2 Électronique')">Electronique</div>
+                <div class="filiere" onclick="infoFiliere('Froid et Climatisation','Bases du fonctionnement des climatiseurs et réfrigérateurs.','Installateur de climatiseurs, technicien frigoriste, poursuite en F5 Froid-Climatisation')">Froid et Climatisation</div>
+                <div class="filiere" onclick="infoFiliere('Maçonnerie','Technique de base pour construire des murs, fondations et petits ouvrages.','Maçon, ouvrier en bâtiment, poursuite en Génie Civil')">Maçonnerie</div>
+                <div class="filiere" onclick="infoFiliere('Mécanique Automobile','Initiation à la réparation des véhicules.','Aide-mécanicien, mécanicien automobile, poursuite en maintenance automobile')">Mécanique Automobile</div>
+                <div class="filiere" onclick="infoFiliere('Construction d’Ouvrages Métalliques','Fabrication et assemblage de structures métalliques (portes, grilles, charpente).','Soudeur, métallier, poursuite en chaudronnerie')">Construction d’Ouvrages Métalliques</div>
+                <div class="filiere" onclick="infoFiliere('Menuiserie','Travail du bois pour la fabrication de meubles et autres.','Menuisier, ébéniste, poursuite en ameublement-ébéniste')">Menuiserie</div>
+                <div class="filiere" onclick="infoFiliere('Métaux en Feuilles','Découpe et façonnage de tôles métalliques pour fabriquer divers objets.','Tôlier, chaudronnier, poursuite en chaudronnerie industrielle')">Métaux en Feuilles</div>
+            `;
+                }
+            }
+
+            if (n === 2) {
+                if (typeChoisi === "general") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('Série A','Etude des langues, littérature et philosophie.','Droit, journalisme, enseignement')">Série A</div>
+                <div class="filiere" onclick="infoFiliere('Série C','Mathématiques et sciences physiques avancées.','Écoles ingénieurs, informatique, architecture')">Série C</div>
+                <div class="filiere" onclick="infoFiliere('Série D','Sciences de la vie et de la terre.','Médecine, pharmacie, agronomie')">Série D</div>
+                <div class="filiere" onclick="infoFiliere('Série E','Mathématiques et technologie.','Ingénieur, maintenance industrielle')">Série E</div>
+                <div class="filiere" onclick="infoFiliere('Série SH','Sciences humaines et sociales.','Sociologie, psychologie, RH')">Série SH</div>
+                <div class="filiere" onclick="infoFiliere('TI Informatique','Programmation et réseaux.','Développeur, technicien réseau')">TI</div>
+                <div class="filiere" onclick="infoFiliere('Série A5','litteraire et specialiste.''enseignant, droit, multilangue , autesse de l'air')">Série A5 </d>
+                 <div class="filiere" onclik="infoFiliere('')"   
+            `;
+                } else if (typeChoisi === "tech") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('F1 Construction mécanique','Conception et maintenance des systèmes mécaniques.','Maintenance industrielle, construction métallique')">F1</div>
+                <div class="filiere" onclick="infoFiliere('F2 Electronique','Circuits électroniques et systèmes communication.','Maintenance électronique, telecom')">F2</div>
+                <div class="filiere" onclick="infoFiliere('F3 Electrotechnique','Production et distribution énergie électrique.','Électricien industriel')">F3</div>
+                <div class="filiere" onclick="infoFiliere('F4 Génie Civil','Construction bâtiments et infrastructures.','Technicien BTP, chef de chantier')">F4</div>
+                <div class="filiere" onclick="infoFiliere('F5 Laboratoire','Analyse chimique et physique.','Technicien laboratoire')">F5</div>
+                <div class="filiere" onclick="infoFiliere('F7 Biochimie','Étude processus biologiques.','Laboratoire médical')">F7</div>
+                <div class="filiere" onclick="infoFiliere('F8 Médico social','Formation santé sociale.','Assistant social')">F8</div>
+                <div class="filiere" onclick="infoFiliere('Mécanique Automobile','Réparation automobile.','Mécanicien')">BT MA</div>
+                <div class="filiere" onclick="infoFiliere('Menuiserie Bois','Fabrication meubles bois.','Menuisier')">BT CI</div>
+                <div class="filiere" onclick="infoFiliere('Couture','Fabrication vêtements.','Styliste')">BT IH</div>
+                <div class="filiere" onclick="infoFiliere('Économie Familiale','Gestion foyer.','Conseiller social')">BT ESF</div>
+                <div class="filiere" onclick="infoFiliere('Froid Climatisation','Installation climatisation.','Frigoriste')">Climatisation</div>
+                <div class="filiere" onclick="infoFiliere('Plomberie','Installation eau.','Plombier')">Plomberie</div>
+                <div class="filiere" onclick="infoFiliere('Soudure','Assemblage métal.','Soudeur')">Soudure</div>
+                <div class="filiere" onclick="infoFiliere('Topographie','Mesures terrain.','Géomètre')">Topographie</div>
+            `;
+                } else if (typeChoisi === "com") {
+                    zone.innerHTML = `
+                <div class="filiere" onclick="infoFiliere('Comptabilité CG','Techniques comptables et financières.','Comptable, banquier')">CG</div>
+                <div class="filiere" onclick="infoFiliere('Marketing ACC','Techniques vente et publicité.','Commercial, marketing')">ACC</div>
+                <div class="filiere" onclick="infoFiliere('Secrétariat ACA','Gestion administrative.','Secrétaire direction')">ACA</div>
+                <div class="filiere" onclick="infoFiliere('Fiscalité FIG','Gestion fiscale.','Fiscaliste')">FIG</div>
+                <div class="filiere" onclick="infoFiliere('SES','Étude économie et société.','Économie, droit')">SES</div>
+                
+            `;
+                }
+            }
+        }
+
+        function ouvrirMenu(type) {
+            typeChoisi = type;
+            const menu = document.getElementById("menuGauche");
+            menu.style.display = "block";
+
+
+            if (type === "tech") {
+                menu.innerHTML = `
+            <div class="cycle">
+                <h3 onclick="ouvrirCycle(1)">1er Cycle</h3>
+                <div id="cycle1"></div>
+            </div>
+            <div class="cycle">
+                <h3 onclick="ouvrirCycle(2)">2e Cycle</h3>
+                <div id="cycle2"></div>
+            </div>
+        `;
+            } else {
+
+                menu.innerHTML = `
+            <div class="cycle">
+                <h3 onclick="ouvrirCycle(2)">2e Cycle</h3>
+                <div id="cycle2"></div>
+            </div>
+        `;
+            }
+
+
+            document.getElementById("info").innerHTML = `
+        <h2>Orientation scolaire</h2>
+        <p>Clique sur une filière pour voir les informations et débouchés.</p>
+    `;
+        }
+
+    </script>
     <!-- FOOTER -->
     <footer class="footer">
         <p><strong>Oriceft</strong> — Douala, Cameroun</p>
