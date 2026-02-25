@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orientation | Oriceft</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-bg: rgba(30, 64, 175, 0.05);
+            --secondary: #059669;
+            --secondary-bg: rgba(5, 150, 105, 0.05);
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            flex: 1;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 500;
+            margin-left: 1.5rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Progress */
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: .85rem;
+            color: var(--muted);
+            margin-bottom: .5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 99px;
+            transition: width .5s ease;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
+        }
+
+        .card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        /* Options grid */
+        .options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .75rem;
+        }
+
+        @media(max-width:560px) {
+            .options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .option-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            padding: 1.25rem .75rem;
+            border-radius: var(--radius);
+            border: 2px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit;
+            font-size: .85rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-light);
+            background: var(--primary-bg);
+        }
+
+        .option-btn.selected-single {
+            border-color: var(--primary);
+            background: var(--primary-bg);
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, .15);
+        }
+
+        .option-btn.selected-multi {
+            border-color: var(--secondary);
+            background: var(--secondary-bg);
+            color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, .15);
+        }
+
+        .option-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Slider */
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .slider-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 8px;
+            appearance: none;
+            background: var(--border);
+            border-radius: 99px;
+            cursor: pointer;
+            accent-color: var(--primary);
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: .75rem;
+            color: var(--muted);
+        }
+
+        /* Nav buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn-prev,
+        .btn-next {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .75rem 1.5rem;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: .85rem;
+            font-weight: 600;
+            transition: all .2s;
+        }
+
+        .btn-prev {
+            background: transparent;
+            color: var(--muted);
+        }
+
+        .btn-prev:hover {
+            color: var(--text);
+        }
+
+        .btn-prev:disabled {
+            opacity: .3;
+            cursor: default;
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+        }
+
+        .btn-next:hover {
+            opacity: .9;
+        }
+
+        .btn-next:disabled {
+            opacity: .4;
+            cursor: default;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: #94a3b8;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: .8rem;
+        }
+
+        footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .animate {
+            animation: fadeIn .4s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="brand">Oriceft</a>
+        <div>
+            <a href="#">Accueil</a>
+            <a href="#">Filières</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="progress-info">
+            <span id="stepLabel">Question 1 / 5</span>
+            <span id="stepPercent">20%</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width:20%"></div>
+        </div>
+        <div class="card animate" id="questionCard">
+            <!-- Rendered by JS -->
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-prev" id="prevBtn" disabled onclick="prev()">← Précédent</button>
+            <button class="btn-next" id="nextBtn" onclick="next()">Suivant →</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 <a href="#">Oriceft</a> — Douala, Cameroun
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                id: "level", question: "Quel est votre niveau actuel ?", type: "single",
+                options: [
+                    { label: "1ère année", value: "1ere", icon: "book-open" },
+                    { label: "5ème", value: "5eme", icon: "book-open" },
+                    { label: "3ème", value: "3eme", icon: "graduation-cap" },
+                    { label: "Seconde", value: "seconde", icon: "graduation-cap" }
+                ]
+            },
+            {
+                id: "subjects", question: "Quelles sont vos matières préférées ?", type: "multi",
+                options: [
+                    { label: "Mathématiques", value: "math", icon: "calculator" },
+                    { label: "Physique", value: "physics", icon: "flask" },
+                    { label: "SVT", value: "svt", icon: "heart" },
+                    { label: "Littérature", value: "literature", icon: "languages" },
+                    { label: "Économie", value: "economics", icon: "bar-chart" },
+                    { label: "Technologie", value: "technology", icon: "cpu" }
+                ]
+            },
+            { id: "average", question: "Quelle est votre moyenne générale approximative ?", type: "slider", min: 5, max: 20, step: 0.5 },
+            {
+                id: "interests", question: "Quels domaines vous intéressent le plus ?", type: "multi",
+                options: [
+                    { label: "Ingénierie", value: "engineering", icon: "building" },
+                    { label: "Commerce", value: "business", icon: "briefcase" },
+                    { label: "Sciences", value: "sciences", icon: "flask" },
+                    { label: "Informatique", value: "it", icon: "cpu" },
+                    { label: "Langues", value: "languages", icon: "languages" },
+                    { label: "Froid & Clim", value: "hvac", icon: "snowflake" }
+                ]
+            },
+            {
+                id: "career", question: "Quel métier vous attire le plus ? (optionnel)", type: "single",
+                options: [
+                    { label: "Ingénieur", value: "engineer", icon: "building" },
+                    { label: "Médecin", value: "doctor", icon: "heart" },
+                    { label: "Entrepreneur", value: "entrepreneur", icon: "lightbulb" },
+                    { label: "Développeur", value: "developer", icon: "cpu" },
+                    { label: "Enseignant", value: "teacher", icon: "graduation-cap" },
+                    { label: "Autre", value: "other", icon: "star" }
+                ]
+            }
+        ];
+
+        const icons = {
+            "book-open": `<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
+            "graduation-cap": `<svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>`,
+            "calculator": `<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>`,
+            "flask": `<svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v7.4a2 2 0 0 1-.5 1.3L4 19a2 2 0 0 0 1.5 3h13a2 2 0 0 0 1.5-3l-5.5-7.3A2 2 0 0 1 14 10.4V3"/></svg>`,
+            "heart": `<svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
+            "languages": `<svg viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>`,
+            "bar-chart": `<svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>`,
+            "cpu": `<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>`,
+            "building": `<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>`,
+            "briefcase": `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/></svg>`,
+            "snowflake": `<svg viewBox="0 0 24 24"><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/><path d="m20 16-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></svg>`,
+            "lightbulb": `<svg viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></svg>`,
+            "star": `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+        };
+
+        let step = 0;
+        let answers = {};
+        let sliderVal = 12;
+
+        function render() {
+            const q = questions[step];
+            const pct = Math.round(((step + 1) / questions.length) * 100);
+            document.getElementById("stepLabel").textContent = `Question ${step + 1} / ${questions.length}`;
+            document.getElementById("stepPercent").textContent = pct + "%";
+            document.getElementById("progressFill").style.width = pct + "%";
+            document.getElementById("prevBtn").disabled = step === 0;
+            document.getElementById("nextBtn").textContent = step === questions.length - 1 ? "Voir les résultats →" : "Suivant →";
+
+            const card = document.getElementById("questionCard");
+            card.className = "card animate";
+            let html = `<h2>${q.question}</h2>`;
+
+            if (q.type === "single" && q.options) {
+                html += `<div class="options">`;
+                q.options.forEach(o => {
+                    const sel = answers[q.id] === o.value;
+                    html += `<button class="option-btn${sel ? " selected-single" : ""}" onclick="selectSingle('${o.value}')">${icons[o.icon] || ""}<span>${o.label}</span></button>`;
+                });
+                html += `</div>`;
+            } else if (q.type === "multi" && q.options) {
+                html += `<div class="options">`;
+                q.options.forEach(o => {
+                    const sel = (answers[q.id] || []).includes(o.value);
+                    html += `<button class="option-btn${sel ? " selected-multi" : ""}" onclick="toggleMulti('${o.value}')">${icons[o.icon] || ""}<span>${o.label}</span></button>`;
+                });
+                html += `</div>`;
+            } else if (q.type === "slider") {
+                html += `<div class="slider-container">
+      <div class="slider-value">${sliderVal}/20</div>
+      <input type="range" min="${q.min}" max="${q.max}" step="${q.step}" value="${sliderVal}" oninput="updateSlider(this.value)"/>
+      <div class="slider-labels"><span>${q.min}/20</span><span>${q.max}/20</span></div>
+    </div>`;
+            }
+            card.innerHTML = html;
+            updateNextState();
+        }
+
+        function selectSingle(v) { answers[questions[step].id] = v; render(); }
+        function toggleMulti(v) {
+            const id = questions[step].id;
+            const arr = answers[id] || [];
+            answers[id] = arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+            render();
+        }
+        function updateSlider(v) { sliderVal = parseFloat(v); document.querySelector(".slider-value").textContent = sliderVal + "/20"; }
+
+        function updateNextState() {
+            const q = questions[step];
+            let ok = false;
+            if (q.type === "slider" || q.id === "career") ok = true;
+            else if (q.type === "single") ok = !!answers[q.id];
+            else if (q.type === "multi") ok = Array.isArray(answers[q.id]) && answers[q.id].length > 0;
+            document.getElementById("nextBtn").disabled = !ok;
+        }
+
+        function next() {
+            const q = questions[step];
+            if (q.type === "slider") answers[q.id] = sliderVal;
+            if (step < questions.length - 1) { step++; render(); }
+            else { alert("Résultats : " + JSON.stringify(answers, null, 2)); }
+        }
+        function prev() { if (step > 0) { step--; render(); } }
+
+        render();
+    </script>
+</body>
+
+</html>

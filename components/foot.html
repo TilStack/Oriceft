@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer – Oriceft</title>
+
+    <!-- ═══════════════════════════════════════════════════
+       POLICE : Sora pour les titres, DM Sans pour le corps
+       Importées depuis Google Fonts
+  ════════════════════════════════════════════════════ -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════════════════════
+       VARIABLES CSS GLOBALES
+       Centralise les couleurs et espacements pour
+       faciliter la maintenance du design système
+    ════════════════════════════════════════════════════ */
+        :root {
+            --bg-footer: #141b2d;
+            /* Fond sombre bleu nuit du footer         */
+            --bg-logo: #2563eb;
+            /* Bleu vif du logo / badge Oriceft         */
+            --text-primary: #f1f5f9;
+            /* Blanc cassé – titres et liens            */
+            --text-muted: #94a3b8;
+            /* Gris clair – textes secondaires          */
+            --text-body: #cbd5e1;
+            /* Gris moyen – description                 */
+            --accent: #3b82f6;
+            /* Bleu accent – hover sur les liens        */
+            --divider: rgba(255, 255, 255, 0.08);
+            /* Séparateur discret          */
+            --font-title: 'Sora', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius-logo: 12px;
+            /* Arrondi du badge logo                    */
+            --transition: 0.25s ease;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       RESET & BASE
+    ════════════════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* On affiche uniquement le footer dans cette démo */
+            background: #0f1624;
+            font-family: var(--font-body);
+            color: var(--text-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       FOOTER — CONTENEUR PRINCIPAL
+    ════════════════════════════════════════════════════ */
+        .footer {
+            background-color: var(--bg-footer);
+            padding: 56px 0 0;
+            /* Espace vertical en haut                    */
+            width: 100%;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       WRAPPER INTERNE : limite la largeur et centre
+    ════════════════════════════════════════════════════ */
+        .footer__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       GRILLE 3 COLONNES
+       – colonne 1 : branding + description (plus large)
+       – colonne 2 : liens rapides
+       – colonne 3 : contact
+    ════════════════════════════════════════════════════ */
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.4fr;
+            /* Proportions fidèles à la maquette */
+            gap: 64px;
+            padding-bottom: 48px;
+        }
+
+        /* ──────────────────────────────────────────────────
+       COLONNE 1 : BRANDING
+    ────────────────────────────────────────────────── */
+
+        /* Badge / Logo Oriceft */
+        .brand__logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Carré bleu contenant l'icône */
+        .brand__icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-logo);
+            border-radius: var(--radius-logo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            /* Légère ombre pour donner du relief */
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+
+        /* SVG chapeau de diplômé */
+        .brand__icon svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        /* Nom de la marque */
+        .brand__name {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: var(--text-primary);
+        }
+
+        /* Description sous le logo */
+        .brand__desc {
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: var(--text-body);
+            max-width: 300px;
+            font-weight: 300;
+        }
+
+        /* ──────────────────────────────────────────────────
+       COLONNES 2 & 3 : TITRES DE SECTION
+    ────────────────────────────────────────────────── */
+        .footer__section-title {
+            font-family: var(--font-title);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        /* ──────────────────────────────────────────────────
+       LISTE DES LIENS RAPIDES
+    ────────────────────────────────────────────────── */
+        .footer__nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer__nav a {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            position: relative;
+            transition: color var(--transition);
+            /* Pseudo-élément utilisé pour l'effet de soulignement au hover */
+        }
+
+        /* Ligne animée au survol */
+        .footer__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--accent);
+            transition: width var(--transition);
+        }
+
+        .footer__nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer__nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ──────────────────────────────────────────────────
+       LISTE DES INFORMATIONS DE CONTACT
+    ────────────────────────────────────────────────── */
+        .footer__contact {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer__contact li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            transition: color var(--transition);
+        }
+
+        /* Icônes SVG de contact */
+        .footer__contact li svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--text-muted);
+            transition: color var(--transition);
+        }
+
+        .footer__contact li:hover {
+            color: var(--text-primary);
+        }
+
+        .footer__contact li:hover svg {
+            color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════════════════
+       SÉPARATEUR HORIZONTAL
+    ════════════════════════════════════════════════════ */
+        .footer__divider {
+            border: none;
+            border-top: 1px solid var(--divider);
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       BARRE BASSE — COPYRIGHT
+    ════════════════════════════════════════════════════ */
+        .footer__bottom {
+            padding: 20px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer__bottom p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.01em;
+        }
+
+        /* ═══════════════════════════════════════════════════
+       RESPONSIVE — TABLETTE (≤ 900px)
+    ════════════════════════════════════════════════════ */
+        @media (max-width: 900px) {
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+                /* 2 colonnes sur tablette  */
+                gap: 40px;
+            }
+
+            /* La colonne branding occupe toute la largeur en haut */
+            .footer__col--brand {
+                grid-column: 1 / -1;
+            }
+
+            .brand__desc {
+                max-width: 100%;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════
+       RESPONSIVE — MOBILE (≤ 600px)
+    ════════════════════════════════════════════════════ */
+        @media (max-width: 600px) {
+            .footer {
+                padding-top: 40px;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr;
+                /* Empilage vertical                        */
+                gap: 32px;
+            }
+
+            .footer__inner {
+                padding: 0 20px;
+            }
+
+            .footer__bottom {
+                padding: 20px;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════
+       ANIMATION D'APPARITION AU CHARGEMENT
+       Les colonnes montent avec un léger délai (JS → CSS)
+    ════════════════════════════════════════════════════ */
+        .footer__col {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        /* Classe ajoutée par JS pour déclencher l'animation */
+        .footer__col.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo" aria-label="Pied de page Oriceft">
+
+        <div class="footer__inner">
+
+            <!-- ─── GRILLE PRINCIPALE ───────────────────────── -->
+            <div class="footer__grid">
+
+                <!-- ── COLONNE 1 : BRANDING ──────────────────── -->
+                <div class="footer__col footer__col--brand">
+
+                    <!-- Logo + Nom -->
+                    <div class="brand__logo" aria-label="Oriceft – Accueil">
+                        <!-- Badge bleu avec chapeau de diplômé -->
+                        <div class="brand__icon" aria-hidden="true">
+                            <!-- Icône SVG : chapeau de diplômé (mortarboard) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18V17l7 4 7-4v-3.82l-7 3.82-7-3.82z" />
+                            </svg>
+                        </div>
+                        <span class="brand__name">Oriceft</span>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="brand__desc">
+                        Plateforme d'orientation scolaire intelligente pour aider
+                        les élèves et parents à choisir la filière idéale au sein du
+                        système éducatif camerounais.
+                    </p>
+
+                </div>
+                <!-- /COLONNE 1 -->
+
+                <!-- ── COLONNE 2 : LIENS RAPIDES ─────────────── -->
+                <div class="footer__col">
+                    <h3 class="footer__section-title">Liens rapides</h3>
+
+                    <ul class="footer__nav" role="list">
+                        <li><a href="#filieres">Filières</a></li>
+                        <li><a href="#orientation">Orientation</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- /COLONNE 2 -->
+
+                <!-- ── COLONNE 3 : CONTACT ────────────────────── -->
+                <div class="footer__col">
+                    <h3 class="footer__section-title">Contact</h3>
+
+                    <ul class="footer__contact" role="list">
+
+                        <!-- Adresse -->
+                        <li>
+                            <!-- Icône : broche de localisation -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Douala, Cameroun</span>
+                        </li>
+
+                        <!-- Téléphone -->
+                        <li>
+                            <!-- Icône : téléphone -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                         19.79-19.79 0 0 1-8.63-3.07
+                         19.5 19.5 0 0 1-6-6
+                         19.79 19.79 0 0 1-3.07-8.67
+                         A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+                         c.127.96.361 1.903.7 2.81
+                         a2 2 0 0 1-.45 2.11L8.09 9.91
+                         a16 16 0 0 0 6 6l1.27-1.27
+                         a2 2 0 0 1 2.11-.45
+                         c.907.339 1.85.573 2.81.7
+                         A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <span>+237 6XX XXX XXX</span>
+                        </li>
+
+                        <!-- Email -->
+                        <li>
+                            <!-- Icône : enveloppe -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <polyline points="2,4 12,13 22,4" />
+                            </svg>
+                            <span>contact@oriceft.cm</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /COLONNE 3 -->
+
+            </div>
+            <!-- /GRILLE -->
+
+        </div>
+        <!-- /INNER -->
+
+        <!-- ─── SÉPARATEUR ──────────────────────────────── -->
+        <hr class="footer__divider" />
+
+        <!-- ─── BARRE BASSE COPYRIGHT ───────────────────── -->
+        <div class="footer__bottom">
+            <p id="footer-copyright">
+                <!-- Le texte de l'année est injecté dynamiquement par JS -->
+                &copy; <span id="year"></span> Oriceft. Tous droits réservés. Propulsé par l'IA.
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+       JAVASCRIPT
+       1) Injection dynamique de l'année courante
+       2) Animation des colonnes au chargement (IntersectionObserver)
+  ════════════════════════════════════════════════════ -->
+    <script>
+        /* ──────────────────────────────────────────────────
+           1. ANNÉE DYNAMIQUE
+           On insère automatiquement l'année en cours dans
+           la mention copyright — plus besoin de la mettre
+           à jour manuellement chaque année.
+        ────────────────────────────────────────────────── */
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+
+        /* ──────────────────────────────────────────────────
+           2. ANIMATION D'APPARITION (INTERSECTION OBSERVER)
+           Dès que les colonnes entrent dans le viewport,
+           on leur ajoute la classe `.is-visible` avec un
+           délai échelonné (stagger) pour un effet fluide.
+        ────────────────────────────────────────────────── */
+        const cols = document.querySelectorAll('.footer__col');
+
+        /**
+         * Callback de l'IntersectionObserver.
+         * @param {IntersectionObserverEntry[]} entries
+         */
+        function onColVisible(entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Récupère l'index de la colonne pour échelonner le délai
+                    const index = Array.from(cols).indexOf(entry.target);
+                    // Chaque colonne apparaît avec 120 ms de décalage
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, index * 120);
+
+                    // On arrête d'observer une fois l'animation déclenchée
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+
+        // Crée l'observer avec un seuil de 10 % de visibilité
+        const observer = new IntersectionObserver(onColVisible, {
+            threshold: 0.1,
+        });
+
+        // Attache l'observer à chaque colonne du footer
+        cols.forEach((col) => observer.observe(col));
+
+    </script>
+
+</body>
+
+</html>

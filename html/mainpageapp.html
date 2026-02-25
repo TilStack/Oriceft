@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orientation</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mainpageapp.css">
+    <link rel="stylesheet" href="/css/mainpageapp_responsive.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="screen">
+            <div class="form-wrapper">
+                <h2>Remplissez les informations suivantes</h2>
+                <form id="form">
+                    <div class="name">
+                        <label for="name">Nom :</label>
+                        <input type="text" name="name" placeholder="Entrer votre nom !">
+                    </div>
+                    <div class="name">
+                        <label for="surname">Prénom :</label>
+                        <input type="text" name="surname" placeholder="Entrer votre prénom !">
+                    </div>
+                    <div class="selection">
+                        <label for="niveau">Niveau</label>
+                        <div class="content">
+                            <div class="level-selection">
+
+                                <div class="level-item">
+                                    <input type="radio" name="niveau" id="lvl1" value="1ere">
+                                    <label for="lvl1">
+                                        <div class="icon">📖</div>
+                                        <span>De 1ère à 4ieme année</span>
+                                    </label>
+                                </div>
+
+                                <div class="level-item">
+                                    <input type="radio" name="niveau" id="lvl2" value="5eme">
+                                    <label for="lvl2">
+                                        <div class="icon">📖</div>
+                                        <span>De 6ieme à 3 ieme</span>
+                                    </label>
+                                </div>
+
+                                <div class="level-item">
+                                    <input type="radio" name="niveau" id="lvl3" value="seconde">
+                                    <label for="lvl3">
+                                        <div class="icon">🎓</div>
+                                        <span>2nd à Tle Industrielle</span>
+                                    </label>
+                                </div>
+
+                                <div class="level-item">
+                                    <input type="radio" name="niveau" id="lvl4" value="seconde">
+                                    <label for="lvl4">
+                                        <div class="icon">🎓</div>
+                                        <span>2nd à Tle commerciale</span>
+                                    </label>
+                                </div>
+
+                                <div class="level-item">
+                                    <input type="radio" name="niveau" id="lvl5" value="seconde">
+                                    <label for="lvl5">
+                                        <div class="icon">🎓</div>
+                                        <span>2nd à Tle Générale</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <p>NB : Merci de bien renseignez l'ensemble des champs du formulaire. Ces informations sont
+                        essentielles
+                        pour le traitement de votre demande</p>
+                    <button type="submit" class="btnNext">Suivant</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="screen explain">
+            <h2>Pourquoi est-ce important de le faire ?</h2>
+
+            <p>
+                Commencez par entrer les informations permet d’assurer un suivi personnalisé
+                pour l’orientation scolaire de l’enfant ou de l’élève. Ces données aident
+                à mieux comprendre son niveau académique, ses besoins et ses possibilités
+                d’évolution afin de lui proposer des filières adaptées à son profil.
+            </p>
+
+            <div class="explain-image">
+                <img src="/imageo.png" alt="Illustration orientation scolaire">
+            </div>
+        </div>
+    </div>
+    <script>
+        const radios = document.querySelectorAll('input[name="niveau"]');
+        const suivant = document.querySelector('.btnNext');
+        suivant.addEventListener("click", function () {
+            location.href = "#";
+        });
+        radios.forEach(radio => {
+            radio.addEventListener("change", function () {
+                console.log("Niveau sélectionné :", this.value);
+            });
+        });
+        function getSelectedLevel() {
+            const selected = document.querySelector('input[name="niveau"]:checked');
+
+            if (selected) {
+                return selected.value;
+            } else {
+                alert("Veuillez sélectionner un niveau");
+                return null;
+            }
+        }
+
+        document.querySelector(".btnNext")?.addEventListener("click", () => {
+            const niveau = getSelectedLevel();
+            console.log(niveau);
+        });
+    </script>
+</body>
+
+</html>

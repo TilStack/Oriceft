@@ -1,0 +1,21 @@
+@media (max-width:1119px) {
+
+    main {
+        min-height: 90vh;
+    }
+
+    .container {
+        flex-wrap: wrap-reverse;
+    }
+
+    .card {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width:790px) {
+
+    main {
+        min-height: 125vh;
+    }
+}
