@@ -164,6 +164,12 @@ main {
     }
 }
 
+@media (max-width: 375px) {
+    main{
+        transform: translateY(90px);
+    }
+}
+
 @keyframes slideUp {
     0% {
         opacity: 0;
