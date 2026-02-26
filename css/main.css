@@ -140,7 +140,6 @@ body {
     cursor: pointer;
     position: relative;
     padding: 0.5rem;
-    background-color: var(--bleu);
     display: flex;
     justify-content: center;
     transition: 0.5s;
@@ -149,17 +148,11 @@ body {
     align-items: center;
     border-radius: 50px;
     -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
     color: var(--blanc);
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
 }
 .mklogo svg {
     font-size: 5rem;
