@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --bleux-principe: #4a3b2f;
+    --beige: #C7A57A;
+    --MARRON-cefti: #4a3b2f;
+    --blanc: #ffffff;
+    --gris: #f2f2f2;
+}
+
+.topMenu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.topMenu button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #4a3b2f;
+    color: white;
+}
+
+
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.gauche {
+    width: 35%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+.cycle h3 {
+    background: #C7A57A;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.filiere {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background: #ecf0f1;
+    cursor: pointer;
+}
+
+.filiere:hover {
+    background: #d0e6f7;
+}
+
+
+.droite {
+    width: 60%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 600px;
+    flex: 1;
+}
+
+@media(max-width: 1024px) {
+    main {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .gauche,
+    .droite {
+        width: 100%;
+    }
+
+    .topMenu {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+
+        .topMenu bottom {
+            padding: 12px 20px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .topMenu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topMenu button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cycle h3 {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .filiere {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .droite {
+        padding: 15px;
+        min-height: 300px;
+    }
+}
+
+@media(max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .topMenu button {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .cycle h3 {
+        font-size: 14px;
+    }
+
+    .filiere {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
