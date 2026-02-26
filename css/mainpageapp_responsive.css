@@ -1,6 +1,8 @@
-@media (max-width: 1024px) {
+@media (max-width: 1194px) {
 
     #app {
+        width: 100%;
+        min-height:190vh;
         flex-direction: column;
     }
 
@@ -16,108 +18,50 @@
         font-size: 26px;
     }
 
-    .screen {
-        height: 100vh;
-    }
-
     .explain p {
         font-size: 14px;
     }
 }
 
-@media (max-width: 768px) {
-
-    #app {
-        flex-direction: column;
-    }
-
-    .screen {
-        padding: 50px 24px;
-    }
-
+@media (max-width: 567px){
+    
     .form-wrapper {
-        margin: 24px auto;
+        max-width: 100%;
+        padding: 0 20px;
     }
 
-    .form-wrapper h2 {
-        text-align: center;
-        font-size: 1.3rem;
-    }
-
-    #form {
-        gap: 12px;
-    }
-
-    .name input {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 14px;
-    }
-
-    .explain {
-        text-align: center;
-    }
-
-    .explain h2 {
-        font-size: 22px;
+     .explain h2 {
+        font-size: 20px;
     }
 
     .explain p {
-        font-size: 14px;
-        margin-bottom: 24px;
-    }
-
-    .screen {
-        height: 100vh;
-    }
-
-    .explain-image img {
-        max-width: 80%;
+        font-size: 10px;
     }
 }
 
-@media (max-width: 480px) {
-
+@media (max-width: 485px){
     .screen {
-        padding: 40px 16px;
+        padding: 40px 20px;
     }
 
-    .level-selection {
-        gap: 12px;
+     .explain h2 {
+        font-size: 18px;
     }
 
-    .level-item {
-        max-width: 100%;
-    }
-
-    .level-item label {
-        height: 100px;
-        padding: 14px;
-    }
-
-    .screen {
-        height: 100vh;
-    }
-
-    .level-item .icon {
-        font-size: 22px;
+    .explain p {
+        font-size: 9px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 412px){
+    #app {
+        min-height: 217vh;
+    }
+}
+
+@media (max-width: 396px){
     .level-selection {
-        justify-content: center;
-    }
-
-    .screen {
-        height: 100vh;
-    }
-
-    .level-item {
-        width: 100%;
-        max-width: 250px;
+        flex-direction: column;
+        gap: 10px;
     }
 }

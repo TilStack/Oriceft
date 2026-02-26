@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/contact.css">
 
     <title>Contactez - Nous</title>
 </head>
@@ -13,7 +13,7 @@
 <body>
 
     <body>
-        <!-- NAV -->
+        <!-- NAV 
         <nav class="nav">
             <div class="nav-inner">
                 <a href="#" class="nav-brand">Ori<span>ceft</span></a>
@@ -33,6 +33,31 @@
                 </button>
             </div>
         </nav>
+        -->
+                <header>
+        <div class="navbar">
+            <div class="mklogo">
+                <a href="/html/accueil.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                OriCeft
+                </a>
+            </div>
+            <ul class="navlink">
+              <li><a href="./accueil.html">Accueil</a></li>
+              <li><a href="./filiere.html">Filières</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="toContact"><a href="#">info</a></li>
+            </ul>
+            <div class="links">
+                <div class="trynow">
+                <a href="/html/index.html">commencer l'orientation</a>
+            </div>
+            <div class="hamburgerToogle">
+                <div class="trait"></div>
+            </div> 
+            </div>
+        </div>
+    </header>
 
         <!-- HERO -->
         <section class="hero">
@@ -145,6 +170,14 @@
                 document.getElementById('successMsg').style.display = 'block';
             });
         </script>
+        <script>
+     const menuToogle = document.querySelector('.hamburgerToogle');
+        const menuLinks = document.querySelector('.navlink');
+        menuToogle.addEventListener('click',function() {
+           menuLinks.classList.toggle('active');
+           menuToogle.classList.toggle('active');
+        })
+</script>
 
     </body>
 </body>
