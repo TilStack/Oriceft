@@ -1,0 +1,229 @@
+/* ── Styles spécifiques loading ── */
+body {
+    background: #1a1a3e;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Anneaux pulsants en fond */
+.rings {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 200, 80, 0.1);
+    animation: pulse-ring 3s ease-in-out infinite;
+}
+
+.ring:nth-child(1) {
+    width: 160px;
+    height: 160px;
+    animation-delay: 0s;
+}
+
+.ring:nth-child(2) {
+    width: 320px;
+    height: 320px;
+    animation-delay: 0.5s;
+}
+
+.ring:nth-child(3) {
+    width: 500px;
+    height: 500px;
+    animation-delay: 1s;
+}
+
+.ring:nth-child(4) {
+    width: 680px;
+    height: 680px;
+    animation-delay: 1.5s;
+}
+
+.ring:nth-child(5) {
+    width: 860px;
+    height: 860px;
+    animation-delay: 2s;
+}
+
+@keyframes pulse-ring {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Contenu */
+.loading-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 24px;
+    max-width: 380px;
+    width: 100%;
+}
+
+/* Spinner triple */
+.spinner-wrap {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 28px;
+    position: relative;
+}
+
+.spin-a {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(232, 160, 32, 0.2);
+    border-top-color: #e8a020;
+    animation: spin 1.2s linear infinite;
+}
+
+.spin-b {
+    position: absolute;
+    inset: 13px;
+    border-radius: 50%;
+    border: 2px solid rgba(232, 160, 32, 0.1);
+    border-bottom-color: rgba(232, 160, 32, 0.5);
+    animation: spin 1.9s linear infinite reverse;
+}
+
+.spin-core {
+    position: absolute;
+    inset: 28px;
+    border-radius: 50%;
+    background: rgba(232, 160, 32, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Titre et sous-titre */
+.loading-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f7f2eb;
+    margin-bottom: 8px;
+}
+
+.loading-sub {
+    font-size: 0.86rem;
+    color: rgba(247, 242, 235, 0.45);
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+/* Étapes */
+.steps {
+    list-style: none;
+    text-align: left;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 0.84rem;
+    color: rgba(247, 242, 235, 0.3);
+    transition: color 0.3s;
+}
+
+.step-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(247, 242, 235, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.step.active {
+    color: rgba(247, 242, 235, 0.88);
+}
+
+.step.active .step-dot {
+    border-color: #e8a020;
+    color: #e8a020;
+    background: rgba(232, 160, 32, 0.1);
+    animation: dot-pulse 1s ease infinite;
+}
+
+.step.done {
+    color: rgba(80, 190, 100, 0.85);
+}
+
+.step.done .step-dot {
+    border-color: #50be64;
+    color: #50be64;
+    background: rgba(80, 190, 100, 0.1);
+}
+
+@keyframes dot-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(232, 160, 32, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 0 7px rgba(232, 160, 32, 0);
+    }
+}
+
+/* Barre de progression */
+.prog-wrap {
+    margin-top: 32px;
+}
+
+.prog-track {
+    height: 3px;
+    background: rgba(247, 242, 235, 0.07);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.prog-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #2d2d6b, #e8a020);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.prog-pct {
+    margin-top: 7px;
+    font-size: 0.74rem;
+    color: rgba(247, 242, 235, 0.28);
+    text-align: right;
+}

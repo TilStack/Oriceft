@@ -1,36 +1,61 @@
-let current = 0;
-const questions = document.querySelectorAll(".question");
-const total = questions.length;
+// quizz.js — logique commune aux trois pages de quiz (quizz.html, quizz2.html, quizz3.html)
+// Les variables PHASE, PHASE_OFFSET, NEXT_PAGE et TOTAL_Q sont définies
+// dans une balise <script> inline dans chaque fichier HTML, avant ce script.
 
-const nextBtn = document.querySelector(".next");
-const submitBtn = document.getElementById("submitBtn");
-const questionNumber = document.getElementById("questionNumber");
-const progressPercent = document.getElementById("progressPercent");
-const progressBar = document.getElementById("progressBar");
-//Recuperons les parametres de la page précedente
-const params = new URLSearchParams(window.location.search);
-const niveauFromPage1 = params.get("niveau");
+// ─── Mapping des questions vers leur dimension RIASEC ──────────────────────
+// q1→q30 : chaque numéro de question (global) est associé à une dimension.
+var RIASEC_MAP = {
+    q1: 'R', q2: 'R',   // Réaliste
+    q3: 'I', q4: 'I',   // Investigateur
+    q5: 'A', q6: 'A',   // Artistique
+    q7: 'S', q8: 'S',   // Social
+    q9: 'E',             // Entrepreneur
+    q10: 'C',             // Conventionnel
+    q11: 'R', q12: 'R',
+    q13: 'I', q14: 'I',
+    q15: 'A', q16: 'A',
+    q17: 'S', q18: 'S',
+    q19: 'E',
+    q20: 'C',
+    q21: 'R',
+    q22: 'I',
+    q23: 'A',
+    q24: 'S',
+    q25: 'E', q26: 'E', q27: 'E',
+    q28: 'C', q29: 'C', q30: 'C'
+};
 
-function updateProgress(index) {
-    // Calcul du pourcentage : (index actuel + 1) / total
-    const percentage = Math.round(((index + 1) / total) * 100);
+// ─── Récupération des éléments du DOM ─────────────────────────────────────
+var current = 0;
+var questions = document.querySelectorAll(".question");
+var total = questions.length; // 10 sur cette page
 
-    // Mise à jour de la barre et du texte
+var nextBtn = document.querySelector(".next");
+var submitBtn = document.getElementById("submitBtn");
+var questionNumber = document.getElementById("questionNumber");
+var progressPercent = document.getElementById("progressPercent");
+var progressBar = document.getElementById("progressBar");
+
+// ─── Mise à jour de la barre de progression globale (sur 30) ──────────────
+function updateProgress(localIndex) {
+    var globalCurrent = PHASE_OFFSET + localIndex + 1; // ex: phase 2, q0 → Q11
+    var percentage = Math.round((globalCurrent / TOTAL_Q) * 100);
+
     progressBar.style.width = percentage + "%";
     progressPercent.textContent = percentage + "%";
-    questionNumber.textContent = "Question " + (index + 1);
+    questionNumber.textContent = "Question " + globalCurrent + " / " + TOTAL_Q;
 }
 
+// ─── Affichage d'une question (identique à ton code d'origine) ─────────────
 function showQuestion(index) {
-    questions.forEach((q, i) => {
+    questions.forEach(function (q, i) {
         q.classList.remove("active", "exit-left");
-        if (i === index) {
-            q.classList.add("active");
-        }
+        if (i === index) q.classList.add("active");
     });
 
     updateProgress(index);
 
+    // Dernière question de la page → bouton soumettre
     if (index === total - 1) {
         submitBtn.style.display = "inline-block";
         nextBtn.style.display = "none";
@@ -42,6 +67,7 @@ function showQuestion(index) {
     checkAnswer();
 }
 
+// ─── Navigation ───────────────────────────────────────────────────────────
 function nextQuestion() {
     if (current < total - 1) {
         questions[current].classList.add("exit-left");
@@ -57,53 +83,92 @@ function prevQuestion() {
     }
 }
 
-//Code modifié
+// ─── Vérification qu'une réponse est cochée (ton code d'origine) ──────────
 function checkAnswer() {
-    const inputs = questions[current].querySelectorAll("input");
-    let answered = false;
-
-    inputs.forEach(input => {
+    var inputs = questions[current].querySelectorAll("input");
+    var answered = false;
+    inputs.forEach(function (input) {
         if (input.checked) answered = true;
     });
 
-    nextBtn.disabled = !answered;
+    if (current === total - 1) {
+        submitBtn.disabled = !answered;
+    } else {
+        nextBtn.disabled = !answered;
+    }
 }
+
 document.addEventListener("change", checkAnswer);
 
-//Code modifié
+// ─── Soumission de la phase ────────────────────────────────────────────────
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const answers = getAllAnswers();
-    const jsonData = JSON.stringify(answers, null, 2);
-
-    alert("Analyse en cours...\n\n" + jsonData);
-
-    localStorage.setItem("quizResults", jsonData);
-
-    window.location.href = "../html/loading.html";
-});
-// Initialisation
-showQuestion(current);
-
-function getAllAnswers() {
-    const form = document.querySelector("form");
-    const formData = new FormData(form);
-
-    const data = {};
-
-    for (let [key, value] of formData.entries()) {
-
-        // Gestion des checkbox multiples
-        if (data[key]) {
-            if (!Array.isArray(data[key])) {
-                data[key] = [data[key]];
+    // Lire toutes les réponses cochées sur cette page
+    var phaseAnswers = {};
+    for (var qName in RIASEC_MAP) {
+        // On ne traite que les questions de cette phase
+        var qNum = parseInt(qName.replace('q', ''));
+        if (qNum > PHASE_OFFSET && qNum <= PHASE_OFFSET + 10) {
+            var selected = document.querySelector('input[name="' + qName + '"]:checked');
+            if (selected) {
+                phaseAnswers[qName] = {
+                    value: parseInt(selected.value),
+                    dim: RIASEC_MAP[qName]
+                };
             }
-            data[key].push(value);
-        } else {
-            data[key] = value;
         }
     }
-    data.niveau = niveauFromPage1;
-    return data;
+
+    // Fusionner avec les réponses des phases précédentes (déjà en localStorage)
+    var allAnswers = {};
+    try {
+        var stored = localStorage.getItem("oriCeftAnswers");
+        if (stored) allAnswers = JSON.parse(stored);
+    } catch (err) { }
+
+    // Fusionner et sauvegarder
+    Object.assign(allAnswers, phaseAnswers);
+    localStorage.setItem("oriCeftAnswers", JSON.stringify(allAnswers));
+
+    // Si c'est la dernière phase : calculer les scores finaux et passer aux résultats
+    if (PHASE === 3) {
+        var scores = computeRiasecScores(allAnswers);
+        localStorage.setItem("oriCeftResults", JSON.stringify(scores));
+    }
+
+    if (PHASE === 3) {
+        // Phase finale : grand loading IA (30 sec) qui redirige vers resultat.html
+        window.location.href = "../html/loading.html";
+    } else {
+        // Phase intermediaire : minloading (5 sec) qui redirige vers la phase suivante
+        localStorage.setItem("loadingNext", NEXT_PAGE);
+        window.location.href = "../html/minloading.html";
+    }
+});
+
+// ─── Calcul des scores RIASEC normalisés (0–100) ──────────────────────────
+function computeRiasecScores(answers) {
+    var dims = ['R', 'I', 'A', 'S', 'E', 'C'];
+    var raw = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+    var counts = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+
+    for (var key in answers) {
+        var a = answers[key];
+        if (a && a.dim && a.value) {
+            raw[a.dim] += a.value;
+            counts[a.dim] += 1;
+        }
+    }
+
+    var normalized = {};
+    dims.forEach(function (d) {
+        var maxPossible = counts[d] * 5;
+        normalized[d] = maxPossible > 0 ? Math.round((raw[d] / maxPossible) * 100) : 0;
+    });
+
+    return { answers: answers, raw: raw, normalized: normalized };
 }
+
+// ─── Initialisation ───────────────────────────────────────────────────────
+showQuestion(current);

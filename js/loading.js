@@ -25,6 +25,25 @@ const interval = setInterval(() => {
 
     if (progress >= 100) {
         clearInterval(interval);
+
+        // ── Récupérer les données complètes des 30 questions ──────────────
+        var answersRaw = localStorage.getItem("oriCeftAnswers");
+        var resultsRaw = localStorage.getItem("oriCeftResults");
+
+        var answers = answersRaw ? JSON.parse(answersRaw) : {};
+        var results = resultsRaw ? JSON.parse(resultsRaw) : {};
+
+        // ── Construire le JSON final complet ─────────────────────────────
+        var finalJson = {
+            reponses_30_questions: answers,
+            scores_riasec: results.normalized || {},
+            scores_bruts: results.raw || {}
+        };
+
+        // ── Sauvegarder le JSON final pour la page résultat ──────────────
+        localStorage.setItem("oriFinalJson", JSON.stringify(finalJson, null, 2));
+
+        // ── Redirection vers la page résultats ───────────────────────────
         window.location.href = "resultat.html";
     }
 
