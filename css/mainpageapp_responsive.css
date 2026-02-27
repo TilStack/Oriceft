@@ -2,7 +2,7 @@
 
     #app {
         width: 100%;
-        min-height:190vh;
+        min-height: 190vh;
         flex-direction: column;
     }
 
@@ -21,31 +21,48 @@
     .explain p {
         font-size: 14px;
     }
+
+    .level-selection {
+
+        justify-content: center;
+    }
+
 }
 
-@media (max-width: 567px){
-    
+@media (max-width: 567px) {
+
     .form-wrapper {
         max-width: 100%;
         padding: 0 20px;
     }
 
-     .explain h2 {
+    .explain h2 {
         font-size: 20px;
     }
 
     .explain p {
         font-size: 10px;
     }
+
+    .level-selection {
+
+        justify-content: center;
+    }
+
 }
 
-@media (max-width: 485px){
+@media (max-width: 485px) {
     .screen {
         padding: 40px 20px;
     }
 
-     .explain h2 {
+    .explain h2 {
         font-size: 18px;
+    }
+
+    .level-selection {
+
+        justify-content: center;
     }
 
     .explain p {
@@ -53,15 +70,23 @@
     }
 }
 
-@media (max-width: 412px){
+@media (max-width: 412px) {
     #app {
         min-height: 217vh;
     }
+
+    .level-selection {
+
+        justify-content: center;
+    }
+
 }
 
-@media (max-width: 396px){
+@media (max-width: 396px) {
     .level-selection {
         flex-direction: column;
+
+        justify-content: center;
         gap: 10px;
     }
 }
