@@ -432,8 +432,6 @@ header {
     flex-shrink: 0;
 }
 
-.card-meta {}
-
 .card-type-badge {
     font-size: 0.65rem;
     font-weight: 700;
