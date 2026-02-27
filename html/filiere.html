@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filières</title>
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/filiere.css" />
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filières</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/filiere.css">
+</head>
+
+<body>
     <!-- NAV 
     <nav class="nav">
         <div class="nav-inner">
@@ -31,1953 +32,1497 @@
     </nav>
      -->
     <header>
-      <div class="navbar">
-        <div class="mklogo">
-          <a href="/html/accueil.html" class="logo">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground"
-            >
-              <path
-                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
-              ></path>
-              <path d="M22 10v6"></path>
-              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-            </svg>
-            OriCeft
-          </a>
+        <div class="navbar">
+            <div class="mklogo">
+                <a href="/html/accueil.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                OriCeft
+                </a>
+            </div>
+            <ul class="navlink">
+              <li><a href="./accueil.html">Accueil</a></li>
+              <li><a href="./filiere.html">Filières</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="toContact"><a href="#">info</a></li>
+            </ul>
+            <div class="links">
+                <div class="trynow">
+                <a href="/html/index.html">commencer l'orientation</a>
+            </div>
+            <div class="hamburgerToogle">
+                <div class="trait"></div>
+            </div> 
+            </div>
         </div>
-        <ul class="navlink">
-          <li><a href="./accueil.html">Accueil</a></li>
-          <li><a href="./filiere.html">Filières</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="toContact"><a href="#">info</a></li>
-        </ul>
-        <div class="links">
-          <div class="trynow">
-            <a href="/html/index.html">commencer l'orientation</a>
-          </div>
-          <div class="hamburgerToogle">
-            <div class="trait"></div>
-          </div>
-        </div>
-      </div>
     </header>
     <!-- ── HERO ── -->
     <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <p class="hero-label">Offres de formation</p>
-        <h1 class="hero-title">Nos Filières</h1>
-        <p class="hero-desc">
-          Découvrez nos programmes académiques adaptés à tous les profils,<br />du
-          Baccalauréat au Doctorat.
-        </p>
-      </div>
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-label">Offres de formation</p>
+            <h1 class="hero-title">Nos Filières</h1>
+            <p class="hero-desc">Découvrez nos programmes académiques adaptés à tous les profils,<br>du Baccalauréat au
+                Doctorat.</p>
+        </div>
     </section>
     <section class="filieres-section">
-      <div class="container">
-        <div class="tab-bar">
-          <button class="tab-btn active" data-tab="generale">
-            <span class="tab-icon">📚</span> Généraliste
-          </button>
-          <button class="tab-btn" data-tab="technique">
-            <span class="tab-icon">⚙️</span> Technicien
-          </button>
-          <button class="tab-btn" data-tab="commerciale">
-            <span class="tab-icon">💼</span> Commerciale
-          </button>
+        <div class="container">
+
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="generale">
+                    <span class="tab-icon">📚</span> Généraliste
+                </button>
+                <button class="tab-btn" data-tab="technique">
+                    <span class="tab-icon">⚙️</span> Technicien
+                </button>
+                <button class="tab-btn" data-tab="commerciale">
+                    <span class="tab-icon">💼</span> Commerciale
+                </button>
+            </div>
+
+            <div class="panels-wrapper">
+
+                <!-- ══════════ GÉNÉRALE ══════════ -->
+                <div class="panel active" id="panel-generale">
+                    <div class="panel-left">
+                        <p class="panel-left-title">GENERALES</p>
+                        <ul class="dept-list">
+                            <li class="dept-group">
+                                <div class="dept-item has-sub active-group" data-group="grp-gen-lettres">
+                                    <span class="dept-dot"></span><span>Premier cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list open">
+                                    <li class="sub-item active" data-target="gen-pcycle-6">6ieme
+                                    </li>
+                                    <li class="sub-item" data-target="gen-pcycle-5"> 5ieme
+                                    </li>
+                                    <li class="sub-item" data-target="gen-pcycle-4">4ieme</li>
+                                    <li class="sub-item" data-target="gen-pcycle-3">3ieme</li>
+                                </ul>
+                            </li>
+
+                            <li class="dept-group">
+                                <div class="dept-item has-sub" data-group="grp-gen-lettres">
+                                    <span class="dept-dot"></span><span>Second cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list open">
+                                    <li class="sub-item" data-target="gen-cycle-lettre1">A1,A2,A3,A5 : LITTÉRAIRES
+                                    </li>
+                                    <li class="sub-item" data-target="gen-sciences-humaine">SH : SCIENCES HUMAINES
+                                    </li>
+                                   
+                                    <li class="sub-item" data-target="gen-sciences-B">B : SCIENCES ÉCONOMIQUES ET
+                                        SOCIALES
+                                    </li>
+                                    <li class="sub-item" data-target="gen-sciences-C">C : MATHÉMATIQUES ET PHYSIQUES
+                                    </li>
+                                    <li class="sub-item" data-target="gen-sciences-D">D : MATHÉMATIQUES ET SVT
+                                    </li>
+                                    <li class="sub-item" data-target="gen-sciences-E">E : MATHÉMATIQUES ET
+                                        TECHNIQUES
+                                    </li>
+                                    <li class="sub-item" data-target="gen-sciences-TI">TI : TECHNOLOGIES DE
+                                        L'INFORMATION
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="panel-right">
+                        <div class="dept-info active" id="gen-pcycle-6">
+                            <div class="info-header">
+                                <div class="info-icon">📖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La 6ème constitue l’introduction aux fondamentaux du secondaire. Les élèves découvrent les matières principales comme le français, les mathématiques, les sciences, l’histoire et la géographie. On y développe la compréhension écrite et orale, la logique mathématique et les premiers projets scientifiques. Des activités culturelles et sportives sont intégrées pour développer le sens critique, la créativité et la communication. L’objectif est de préparer l’élève à des choix éclairés pour le cycle suivant. Cette année permet également de renforcer les compétences sociales et organisationnelles, ainsi que la capacité à travailler en groupe et individuellement.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Description</h4>
+                                    <small>Le latin est une langue pour les élèves qui choisissent d'étudier les langues anciennes en mettant l'accent sur l'étymologie, la culture antique et la maitrise profonde de la langue française. Elle est idéale pour ceux qui aiment la lecture et l'histoire des civilisations. </small>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Greffier adjoint</li>
+                                        <li>2<sup>nd</sup> littéraire</li>
+                                        <li>Agent de bibliothèque</li>
+                                        <li>Institeur de l'enseignement primaire</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span class="badge">Tous
+                                    cycles</span><span class="badge accent">4 programmes</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-pcycle-5">
+                            <div class="info-header">
+                                <div class="info-icon">✍️</div>
+                                <div>
+                                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
+                                    <h2 class="info-title">Licence Lettres Modernes</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Formation de 3 ans en littérature française et francophone, grammaire
+                                avancée,
+                                stylistique et analyse textuelle. Idéale pour l'enseignement et la communication.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules clés</h4>
+                                    <ul>
+                                        <li>Littérature française</li>
+                                        <li>Littérature africaine</li>
+                                        <li>Stylistique &amp; Rhétorique</li>
+                                        <li>Grammaire avancée</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Professeur de Français</li>
+                                        <li>Journaliste</li>
+                                        <li>Auteur / Éditeur</li>
+                                        <li>Communication d'entreprise</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A</span><span class="badge">3
+                                    ans</span><span class="badge">6 semestres</span><span
+                                    class="badge accent">Présentiel</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-pcycle-4">
+                            <div class="info-header">
+                                <div class="info-icon">🇬🇧</div>
+                                <div>
+                                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
+                                    <h2 class="info-title">Licence Anglais</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Maîtrise de l'anglais académique et professionnel, civilisation
+                                anglo-saxonne,
+                                traduction et interprétation. Formation bilingue dans un contexte camerounais.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>English Literature</li>
+                                        <li>Civilisation britannique</li>
+                                        <li>Traduction FR/EN</li>
+                                        <li>Anglais des affaires</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Traducteur / Interprète</li>
+                                        <li>Enseignant d'anglais</li>
+                                        <li>Relations internationales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span
+                                    class="badge">Bilingue</span><span class="badge accent">TOEFL préparé</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-pcycle-3">
+                            <div class="info-header">
+                                <div class="info-icon">🇬🇧</div>
+                                <div>
+                                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
+                                    <h2 class="info-title">Licence Anglais</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Maîtrise de l'anglais académique et professionnel, civilisation
+                                anglo-saxonne,
+                                traduction et interprétation. Formation bilingue dans un contexte camerounais.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>English Literature</li>
+                                        <li>Civilisation britannique</li>
+                                        <li>Traduction FR/EN</li>
+                                        <li>Anglais des affaires</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Traducteur / Interprète</li>
+                                        <li>Enseignant d'anglais</li>
+                                        <li>Relations internationales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span
+                                    class="badge">Bilingue</span><span class="badge accent">TOEFL préparé</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-cycle-lettre1">
+                            <div class="info-header">
+                                <div class="info-icon">🔤</div>
+                                <div>
+                                    <p class="info-breadcrumb">A1, A2, A3, A4, A5 : Littéraires</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Ces séries mettent l’accent sur les lettres classiques, les langues vivantes, la littérature et la philosophie. Les élèves y développent des compétences avancées en expression écrite et orale, en analyse critique des textes et en compréhension des phénomènes culturels et historiques. Les cours incluent la grammaire approfondie, l’histoire littéraire, la rédaction de dissertations, l’art oratoire et les travaux pratiques. Les élèves participent à des débats, des exposés et des projets culturels. Cette série prépare aux carrières académiques et intellectuelles, favorise le développement de la pensée critique et des capacités de synthèse.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+             
+                                        <li> Lycée Général de Yaoundé</li>
+                                        <li>Lycée Leclerc Douala</li>
+                                        <li>Lycée de Garoua</li>
+                                        <li>Lycée de Nkongsamba</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Professeur</li>
+                                        <li>Journaliste</li>
+                                        <li>historien</li>
+                                        <li>Archéologue</li>
+                                        <li>Traducteur</li>
+                                        <li>Diplomate</li>
+                                        <li>Écrivain</li>
+                                        <li>Conseiller culturel</li>
+                                        <li>Animateur social</li>
+                                        <li>Rédacteur</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Licence requise</span><span class="badge">4
+                                    semestres</span><span class="badge accent">Thèse possible</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-sciences-humaine">
+                            <div class="info-header">
+                                <div class="info-icon">🔬</div>
+                                <div>
+                                    <p class="info-breadcrumb">Sciences Humaines</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série SH (Sciences Humaines) met l’accent sur l’histoire, la géographie, la sociologie et la philosophie. Les élèves développent leur capacité d’analyse critique, de synthèse et de réflexion sur les questions sociales, culturelles et politiques. Les cours incluent lectures, débats, recherches documentaires et projets de groupe. Cette série forme des élèves capables de comprendre les sociétés, les cultures et les interactions humaines. Elle prépare à la poursuite d’études en sciences sociales, communication, droit et relations internationales, tout en renforçant la culture générale et les compétences en expression écrite et orale.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li>Lycée Général de Yaoundé</li>
+                                        <li>Lycée Leclerc Douala</li>
+                                        <li>Lycée de Garoua</li>
+                                        <li>Lycée de Nkongsamba</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Sociologue</li>
+                                        <li>Historien</li>
+                                        <li>Géographe</li>
+                                        <li>Enseignant</li>
+                                        <li>Chercheur</li>
+                                        <li>Journaliste</li>
+                                        <li>Anthropologue</li>
+                                        <li>Diplomate</li>
+                                        <li>Animateur culturel</li>
+                                        <li>Conseiller en développement social</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">Labos
+                                    équipés</span><span class="badge accent">4 options</span></div>
+                        </div>
+                        
+                        <div class="dept-info" id="gen-sciences-B">
+                            <div class="info-header">
+                                <div class="info-icon">⚗️</div>
+                                <div>
+                                    <p class="info-breadcrumb">Sciences Économiques &amp; Sociales</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série SES (Sciences Économiques et Sociales) est orientée vers la compréhension des enjeux contemporains, l'analyse des comportements humains et les mécanismes de régulation des sociétés. Les élèves y acquièrent une formation pluridisciplinaire solide, alliant rigueur théorique et observation des faits sociaux.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li> Lycée Français International François-Truffaut de yaoundé</li>
+                                        <li>Lycée Français International Dominique-Savio de douala</li>
+                                        <li>Collège Libermann de douala</li>
+                                        <li>Collège Catholique Bilingue Saint-Benoît de douala</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Comptable</li>
+                                        <li>Analyste financier</li>
+                                        <li>analyste politique</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">Labo
+                                    intensif</span><span class="badge accent">Partenariats IRD</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-sciences-C">
+                            <div class="info-header">
+                                <div class="info-icon">🖥️</div>
+                                <div>
+                                    <p class="info-breadcrumb">Mathématique &amp; Physique</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série C est orientée vers les mathématiques, la physique et les sciences expérimentales. Les élèves y acquièrent une formation scientifique solide, avec des travaux pratiques, des expériences en laboratoire et des projets de recherche. L’enseignement inclut la résolution de problèmes complexes, l’expérimentation, l’analyse critique et le raisonnement logique. Les élèves développent des compétences en modélisation, calculs avancés, et méthode scientifique. La série prépare aux études supérieures en ingénierie, informatique et sciences appliquées.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li>Lycée Technique de Douala</li>
+                                        <li>Lycée Général de yaoundé</li>
+                                        <li>CEFTIC yaoundé</li>
+                                        <li>Lycée Bilingue de Garoua</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>ingénieur</li>
+                                        <li>architecte</li>
+                                        <li>chercheur scientifique</li>
+                                        <li>programmeur</li>
+                                        <li>statisticien</li>
+                                        <li>analyste de données</li>
+                                        <li>technicien supérieur</li>
+                                        <li>consultant scientifique</li>
+                                        <li>analyste financier</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">Algo &amp;
+                                    Théorie</span><span class="badge accent">Master IA possible</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-sciences-D">
+                            <div class="info-header">
+                                <div class="info-icon">⚖️</div>
+                                <div>
+                                    <p class="info-breadcrumb">Mathématique &amp; Svt</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série D se concentre sur les sciences de la vie et de la terre, incluant biologie, chimie, géologie et écologie. Les élèves participent à des expériences de laboratoire, des sorties terrain et des projets scientifiques. L’enseignement développe la capacité d’analyse, l’observation, la rédaction de rapports scientifiques et l’esprit critique. Les cours incluent la physiologie, l’écologie, la microbiologie et la biotechnologie. La série prépare aux carrières en médecine, pharmacie, agronomie et recherche biologique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li>Lycée Général de yaoundé</li>
+                                        <li>Lycée Technique de Douala</li>
+                                        <li>CETIC Yaoundé</li>
+                                        <li>Lycée Bilingue de Garoua</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Médecin</li>
+                                        <li>Biologiste</li>
+                                        <li>Agronome</li>
+                                        <li>Chercheur</li>
+                                        <li>Technicien de laboratiore</li>
+                                        <li>Enseignant scientifique</li>
+                                        <li>Consultant santé</li>
+                                        <li>Analyste environnement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span class="badge">Droit
+                                    OHADA</span><span class="badge accent">3 parcours</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-sciences-E">
+                            <div class="info-header">
+                                <div class="info-icon">📜</div>
+                                <div>
+                                    <p class="info-breadcrumb">Mathématique &amp; technique</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série E se concentre sur les mathématiques appliquées et les technologies. Les élèves y étudient l’informatique, l’électronique, la technologie industrielle et la modélisation. Les travaux pratiques et les projets technologiques permettent de comprendre le fonctionnement des systèmes industriels et automatisés. Les élèves développent des compétences en analyse, conception et résolution de problèmes complexes. La série prépare aux carrières techniques et ingénierie appliquée, en combinant théorie et pratique pour former des professionnels polyvalents.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li>Lycée Technique de Douala</li>
+                                        <li>Lycée Bilingue de Yaoundé</li>
+                                        <li>CETIC Yaoundé</li>
+                                        <li>Lycée Général de Garoua</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Ingénieur industriel</li>
+                                        <li>Technicien supérieur</li>
+                                        <li>Informaticien</li>
+                                        <li>Analyste de systèmes</li>
+                                        <li>Développeur</li>
+                                        <li>Chercheur en technologie</li>
+                                        <li>Consultant technique</li>
+                                        <li>Technicien de maintenance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span class="badge">CRFPA
+                                    préparé</span><span class="badge accent">Stages tribunaux</span></div>
+                        </div>
+                        <div class="dept-info" id="gen-sciences-TI">
+                            <div class="info-header">
+                                <div class="info-icon">🏛️</div>
+                                <div>
+                                    <p class="info-breadcrumb">Technologies de l'information</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La série TI forme les élèves aux bases de l’informatique, programmation, réseaux et systèmes d’information. Les cours combinent théorie et pratique, avec des travaux en laboratoire, projets de programmation et initiation à la maintenance informatique. Les élèves apprennent à résoudre des problèmes techniques, analyser des données et comprendre le fonctionnement des systèmes numériques. Cette série développe l’esprit logique, l’organisation, la créativité et la capacité à travailler sur des projets collaboratifs. Elle prépare à la poursuite d’études en informatique et technologies appliquées.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Établissements</h4>
+                                    <ul>
+                                        <li>Lycée Technique de Douala</li>
+                                        <li>Lycée Bilingue de Yaoundé</li>
+                                        <li>CEFTI Douala</li>
+                                        <li>CETIC Yaoundé</li>
+                                        <li>Lycée Général de Garoua</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Technicien informatique</li>
+                                        <li>Programmeur junior</li>
+                                        <li>Administrateur réseau</li>
+                                        <li>Assistant en systèmes d'information</li>
+                                        <li>Développeur web</li>
+                                        <li>Analyste de données</li>
+                                        <li>Support technique</li>
+                                        <li>Consultant IT</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B</span><span class="badge">Concours
+                                    ENAM</span><span class="badge accent">Fonction publique</span></div>
+                        </div>
+                    </div>
+                </div><!-- /panel-generale -->
+
+
+                <!-- ══════════ TECHNIQUE ══════════ -->
+                <div class="panel" id="panel-technique">
+                    <div class="panel-left">
+                        <p class="panel-left-title">TECHNIQUES</p>
+                        <ul class="dept-list">
+
+                            <li class="dept-group">
+                                <div class="dept-item has-sub active-group" data-group="grp-tech-isabee">
+                                    <span class="dept-dot"></span><span>Premier — Cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list open">
+                                    <li class="sub-item active" data-target="tech-pcycle-elec">Electricité (ELEQ)</li>
+                                    <li class="sub-item" data-target="tech-pcycle-elect">Menuiserie‑Ameublement (MENA)
+                                    </li>
+                                    <li class="sub-item" data-target="tech-pcycle-fc">Installation Sanitaire (INSA)</li>
+                                    <li class="sub-item" data-target="tech-pcycle-m">Maçonnerie</li>
+                                    <li class="sub-item" data-target="tech-pcycle-ma">Mecanique Automobile Electrique
+                                        (MAEL)</li>
+                                    <li class="sub-item" data-target="tech-pcycle-co">Couture et Mesure (COME)</li>
+                                    <li class="sub-item" data-target="tech-pcycle-me">Carrosserie‑Peinture Automobile
+                                        (CAPA)</li>
+                                </ul>
+                            </li>
+
+                            <li class="dept-group">
+                                <div class="dept-item has-sub" data-group="grp-tech-estm">
+                                    <span class="dept-dot"></span><span>Second — Cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list">
+                                    <li class="sub-item active" data-target="tech-scycle-afi">AF1;AF2;AF3 Artistique -
+                                        Céramique</li>
+                                    <li class="sub-item" data-target="tech-scycle-ci">CI Chimie Industrielle</li>
+                                    <li class="sub-item active" data-target="tech-scycle-f1">F1 Fabrication
+                                        mecanique</li>
+                                    <li class="sub-item" data-target="tech-scycle-f2">F2 Electronique</li>
+                                    <li class="sub-item" data-target="tech-scycle-f3">F3 Electrotechnique</li>
+                                    <li class="sub-item" data-target="tech-scycle-f4">F4/BE/BA/TP Génie Civil - Bureau
+                                        d'etudes</li>
+                                    <li class="sub-item" data-target="tech-scycle-f5">F5 Froid et Climatisation
+                                    </li>
+                                    <li class="sub-item" data-target="tech-scycle-f7">F7 Bioch/Biolo -
+                                        Biochimie/Biologie</li>
+                                    <li class="sub-item" data-target="tech-scycle-f8">F8 Sciences Medico Sociales
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="panel-right">
+                        <div class="dept-info active" id="tech-pcycle-elec">
+                            <div class="info-header">
+                                <div class="info-icon">🌿</div>
+                                <div>
+                                    <p class="info-breadcrumb">ISABEE</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">L'Institut Supérieur d'Agriculture, Bois, Eau et Environnement forme
+                                des ingénieurs
+                                pour la gestion durable des ressources naturelles du bassin du Congo.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Filières</h4>
+                                    <ul>
+                                        <li>Agronomie</li>
+                                        <li>Eaux &amp; Forêts</li>
+                                        <li>Production animale</li>
+                                        <li>BTS Agropastoral</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Infrastructure</h4>
+                                    <ul>
+                                        <li>Ferme expérimentale</li>
+                                        <li>Labo phytopathologie</li>
+                                        <li>Station météo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D/F</span><span class="badge">Terrain
+                                    &amp;
+                                    Labo</span><span class="badge accent">4 filières</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-elect">
+                            <div class="info-header">
+                                <div class="info-icon">🌾</div>
+                                <div>
+                                    <p class="info-breadcrumb">ISABEE</p>
+                                    <h2 class="info-title">Ingénieur Agronome</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Formation de 5 ans menant au diplôme d'Ingénieur Agronome. Couvre la
+                                protection des
+                                cultures, production végétale, gestion des sols et projets agricoles.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Spécialités</h4>
+                                    <ul>
+                                        <li>Protection des cultures</li>
+                                        <li>Sélection végétale</li>
+                                        <li>Agroforesterie</li>
+                                        <li>Projets agricoles</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Ingénieur MINADER</li>
+                                        <li>Consultant agro</li>
+                                        <li>Chef projet FAO</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">5
+                                    ans</span><span class="badge accent">Stage terrain 6 mois</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-fc">
+                            <div class="info-header">
+                                <div class="info-icon">🌳</div>
+                                <div>
+                                    <p class="info-breadcrumb">ISABEE</p>
+                                    <h2 class="info-title">Eaux &amp; Forêts</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Gestion forestière, conservation des parcs nationaux, aquaculture et
+                                contrôle de la
+                                qualité des eaux. La région de l'Est est l'un des poumons forestiers d'Afrique centrale.
+                            </p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Domaines</h4>
+                                    <ul>
+                                        <li>Gestion des forêts</li>
+                                        <li>Parcs &amp; Réserves</li>
+                                        <li>Aquaculture</li>
+                                        <li>Droit forestier</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Conservateur de parc</li>
+                                        <li>Inspecteur forestier</li>
+                                        <li>Aquaculteur</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">MINFOF
+                                    partenaire</span><span class="badge accent">Forêt tropicale</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-m">
+                            <div class="info-header">
+                                <div class="info-icon">🐄</div>
+                                <div>
+                                    <p class="info-breadcrumb">ISABEE</p>
+                                    <h2 class="info-title">Production Animale</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Zootechnie, génétique animale, santé vétérinaire et gestion des
+                                élevages. Formation
+                                liée aux réalités pastorales de la région de l'Est du Cameroun.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Génétique animale</li>
+                                        <li>Nutrition animale</li>
+                                        <li>Santé animale</li>
+                                        <li>Reproduction</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Zootechnicien</li>
+                                        <li>Inspecteur vétérinaire</li>
+                                        <li>Éleveur professionnel</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D/E</span><span class="badge">Ferme
+                                    expérimentale</span><span class="badge accent">MINEPIA agréé</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-ma">
+                            <div class="info-header">
+                                <div class="info-icon">⛏️</div>
+                                <div>
+                                    <p class="info-breadcrumb">ESTM</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">L'École Supérieure des Technologies et des Mines forme des experts en
+                                géologie,
+                                extraction minière et énergies renouvelables pour le Cameroun et la sous-région.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Filières</h4>
+                                    <ul>
+                                        <li>Mines &amp; Géologie</li>
+                                        <li>Pétrole &amp; Gaz</li>
+                                        <li>Énergies renouvelables</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Partenaires</h4>
+                                    <ul>
+                                        <li>GEOVIC Cameroun</li>
+                                        <li>SNH</li>
+                                        <li>Sundance Resources</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D/E</span><span class="badge">Secteur
+                                    stratégique</span><span class="badge accent">3 filières</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-co">
+                            <div class="info-header">
+                                <div class="info-icon">🪨</div>
+                                <div>
+                                    <p class="info-breadcrumb">ESTM</p>
+                                    <h2 class="info-title">Ingénierie des Mines</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Prospection géologique, extraction minière, traitement des minerais et
+                                gestion
+                                environnementale. La région de l'Est regorge de cobalt, diamant et minerai de fer.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Géologie structurale</li>
+                                        <li>Forage &amp; Extraction</li>
+                                        <li>Traitement des minerais</li>
+                                        <li>Environnement minier</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Ingénieur des mines</li>
+                                        <li>Géologue de terrain</li>
+                                        <li>Expert CAPAM</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/E</span><span class="badge">5
+                                    ans</span><span class="badge accent">Stage mine obligatoire</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-pcycle-me">
+                            <div class="info-header">
+                                <div class="info-icon">☀️</div>
+                                <div>
+                                    <p class="info-breadcrumb">ESTM</p>
+                                    <h2 class="info-title">Énergies Renouvelables</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Solaire, hydraulique et biomasse. Ce cursus innovant répond aux enjeux
+                                d'électrification rurale et de transition énergétique en Afrique centrale.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Photovoltaïque</li>
+                                        <li>Mini-hydraulique</li>
+                                        <li>Biomasse &amp; biogaz</li>
+                                        <li>Smart grid</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Ingénieur énergéticien</li>
+                                        <li>Chef projet rural</li>
+                                        <li>Consultant ARSEL</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/E</span><span class="badge">AES-Sonel
+                                    agréé</span><span class="badge accent">Futur porteur</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-afi">
+                            <div class="info-header">
+                                <div class="info-icon">🩺</div>
+                                <div>
+                                    <p class="info-breadcrumb">FMSP</p>
+                                    <h2 class="info-title">Médecine Générale</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Cursus de 7 ans organisé en 3 cycles : PCEM, DCEM et Externat/Internat.
+                                Formation
+                                clinique intensive au CHU de Bertoua dès la 3e année.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Cycles</h4>
+                                    <ul>
+                                        <li>PCEM1 &amp; PCEM2</li>
+                                        <li>DCEM (4 ans)</li>
+                                        <li>Internat / Résidanat</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Spécialisations</h4>
+                                    <ul>
+                                        <li>Chirurgie générale</li>
+                                        <li>Pédiatrie</li>
+                                        <li>Gynéco-obstétrique</li>
+                                        <li>Médecine tropicale</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac C/D</span><span class="badge">7 ans
+                                    minimum</span><span class="badge accent">Doctorat d'État</span></div>
+                        </div>
+
+                        <div class="dept-info" id="tech-scycle-ci">
+                            <div class="info-header">
+                                <div class="info-icon">👨‍💻</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">Développement Logiciel</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Web, mobile, backend et DevOps. Apprentissage des langages modernes
+                                (Python,
+                                JavaScript, Kotlin) et des méthodologies agiles pour créer des solutions numériques
+                                africaines.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Web (React, Django)</li>
+                                        <li>Mobile (Flutter, Kotlin)</li>
+                                        <li>API REST &amp; GraphQL</li>
+                                        <li>Cloud &amp; DevOps</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Dev full-stack</li>
+                                        <li>Dev mobile</li>
+                                        <li>Architecte logiciel</li>
+                                        <li>CTO startup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Projets réels</span><span class="badge">GitHub
+                                    portfolio</span><span class="badge accent">Hackathons</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-f1">
+                            <div class="info-header">
+                                <div class="info-icon">🔒</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">Réseaux &amp; Sécurité</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Administration système, architecture réseau, cybersécurité et
+                                forensique numérique.
+                                Face à la montée des cybermenaces en Afrique, ce profil est très recherché.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Administration Linux</li>
+                                        <li>Réseaux TCP/IP avancés</li>
+                                        <li>Cybersécurité offensive</li>
+                                        <li>Forensique numérique</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Administrateur réseau</li>
+                                        <li>Pentesteur</li>
+                                        <li>RSSI</li>
+                                        <li>Expert ANTIC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Cisco agréé</span><span class="badge">Labo
+                                    Cybersec</span><span class="badge accent">CCNA préparé</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-f2">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-f3">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-f4">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+
+                        <div class="dept-info" id="tech-scycle-f5">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+                        <div class="dept-info" id="tech-scycle-f7">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+
+                        <div class="dept-info" id="tech-scycle-f8">
+                            <div class="info-header">
+                                <div class="info-icon">🤖</div>
+                                <div>
+                                    <p class="info-breadcrumb">Génie Informatique</p>
+                                    <h2 class="info-title">IA &amp; Data Science</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Machine Learning, NLP, vision par ordinateur et analyse de données
+                                massives. Axé sur
+                                les applications concrètes en santé, agriculture et finance en Afrique.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Technologies</h4>
+                                    <ul>
+                                        <li>Python / TensorFlow</li>
+                                        <li>NLP &amp; LLMs</li>
+                                        <li>Big Data (Spark)</li>
+                                        <li>Visualisation (PowerBI)</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Data Scientist</li>
+                                        <li>Ingénieur ML</li>
+                                        <li>Analyste BI</li>
+                                        <li>Chercheur IA</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">GPU Cluster</span><span class="badge">Datasets
+                                    africains</span><span class="badge accent">Nouveau programme</span></div>
+                        </div>
+                    </div>
+                </div><!-- /panel-technique -->
+
+
+                <!-- ══════════ COMMERCIALE ══════════ -->
+                <div class="panel" id="panel-commerciale">
+                    <div class="panel-left">
+                        <p class="panel-left-title">Commerciale</p>
+                        <ul class="dept-list">
+
+                            <li class="dept-group">
+                                <div class="dept-item has-sub active-group" data-group="grp-com-gestion">
+                                    <span class="dept-dot"></span><span>Premier Cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list open">
+                                    <li class="sub-item active" data-target="com-gestion-overview">Comptabilité (COM)
+                                    </li>
+                                    <li class="sub-item" data-target="com-gestion-licence">Secrétariat & Bureautique
+                                        (SECRET)</li>
+                                    <li class="sub-item" data-target="com-gestion-mba1">Vente & Commerce (VENTE)</li>
+                                    <li class="sub-item" data-target="com-gestion-mba2">Gestion & Administration
+                                        (GESTION)</li>
+                                    <li class="sub-item" data-target="com-gestion-mba3">Analyse de Données &
+                                        Informatique
+                                        Commerciale (ADCI)</li>
+                                </ul>
+                            </li>
+
+                            <li class="dept-group">
+                                <div class="dept-item has-sub" data-group="grp-com-finance">
+                                    <span class="dept-dot"></span><span>Second Cycle</span>
+                                    <svg class="arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </div>
+                                <ul class="sub-list">
+                                    <li class="sub-item" data-target="com-finance-overview2">CG</li>
+                                    <li class="sub-item" data-target="com-finance-compta">ACC</li>
+                                    <li class="sub-item" data-target="com-finance-audit">ACA</li>
+                                    <li class="sub-item" data-target="com-finance-banque">FIG</li>
+                                    <li class="sub-item" data-target="com-finance-otre">SES</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-right">
+                        <div class="dept-info active" id="com-gestion-overview">
+                            <div class="info-header">
+                                <div class="info-icon">🏢</div>
+                                <div>
+                                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">La Faculté d'Économie et Gestion forme des managers polyvalents
+                                capables d'évoluer
+                                dans les organisations publiques et privées. Licence, Master et MBA disponibles.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Programmes</h4>
+                                    <ul>
+                                        <li>Licence Management</li>
+                                        <li>Master Administration</li>
+                                        <li>MBA Executive</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Atouts</h4>
+                                    <ul>
+                                        <li>Cas pratiques entreprises</li>
+                                        <li>Conférences pro mensuelles</li>
+                                        <li>Réseau alumni actif</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac A/B/C/D</span><span class="badge">MBA
+                                    disponible</span><span class="badge accent">3 programmes</span></div>
+                        </div>
+                        <div class="dept-info" id="com-gestion-licence">
+                            <div class="info-header">
+                                <div class="info-icon">📊</div>
+                                <div>
+                                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
+                                    <h2 class="info-title">Licence Management</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Fondamentaux du management, organisation des entreprises, droit des
+                                sociétés OHADA et
+                                gestion de projets. Formation généraliste et professionnalisante en 3 ans.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Management stratégique</li>
+                                        <li>Organisation entreprise</li>
+                                        <li>Droit OHADA</li>
+                                        <li>Gestion de projets</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Responsable d'unité</li>
+                                        <li>Chef de projet junior</li>
+                                        <li>Assistant DG</li>
+                                        <li>Entrepreneur</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">3 ans</span><span class="badge">Stage 3
+                                    mois</span><span class="badge accent">Certif. PMP junior</span></div>
+                        </div>
+                        <div class="dept-info" id="com-gestion-mba1">
+                            <div class="info-header">
+                                <div class="info-icon">🏆</div>
+                                <div>
+                                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
+                                    <h2 class="info-title">MBA Executive</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Programme intensif de 18 mois pour cadres en activité. Leadership,
+                                stratégie
+                                d'entreprise, finance avancée et entrepreneuriat dans le contexte africain.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules phares</h4>
+                                    <ul>
+                                        <li>Leadership &amp; Vision</li>
+                                        <li>Finance d'entreprise</li>
+                                        <li>Stratégie internationale</li>
+                                        <li>Entrepreneuriat africain</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Profil admis</h4>
+                                    <ul>
+                                        <li>Licence + 3 ans exp.</li>
+                                        <li>Cadres en activité</li>
+                                        <li>Entrepreneurs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">18 mois</span><span class="badge">Cours du
+                                    soir</span><span class="badge accent">Réseau dirigeants</span></div>
+                        </div>
+                        <div class="dept-info" id="com-gestion-mba2">
+                            <div class="info-header">
+                                <div class="info-icon">🏆</div>
+                                <div>
+                                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
+                                    <h2 class="info-title">MBA Executive</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Programme intensif de 18 mois pour cadres en activité. Leadership,
+                                stratégie
+                                d'entreprise, finance avancée et entrepreneuriat dans le contexte africain.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules phares</h4>
+                                    <ul>
+                                        <li>Leadership &amp; Vision</li>
+                                        <li>Finance d'entreprise</li>
+                                        <li>Stratégie internationale</li>
+                                        <li>Entrepreneuriat africain</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Profil admis</h4>
+                                    <ul>
+                                        <li>Licence + 3 ans exp.</li>
+                                        <li>Cadres en activité</li>
+                                        <li>Entrepreneurs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">18 mois</span><span class="badge">Cours du
+                                    soir</span><span class="badge accent">Réseau dirigeants</span></div>
+                        </div>
+                        <div class="dept-info" id="com-gestion-mba3">
+                            <div class="info-header">
+                                <div class="info-icon">🏆</div>
+                                <div>
+                                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
+                                    <h2 class="info-title">MBA Executive</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Programme intensif de 18 mois pour cadres en activité. Leadership,
+                                stratégie
+                                d'entreprise, finance avancée et entrepreneuriat dans le contexte africain.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules phares</h4>
+                                    <ul>
+                                        <li>Leadership &amp; Vision</li>
+                                        <li>Finance d'entreprise</li>
+                                        <li>Stratégie internationale</li>
+                                        <li>Entrepreneuriat africain</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Profil admis</h4>
+                                    <ul>
+                                        <li>Licence + 3 ans exp.</li>
+                                        <li>Cadres en activité</li>
+                                        <li>Entrepreneurs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">18 mois</span><span class="badge">Cours du
+                                    soir</span><span class="badge accent">Réseau dirigeants</span></div>
+                        </div>
+                        <div class="dept-info" id="com-finance-overview">
+                            <div class="info-header">
+                                <div class="info-icon">💰</div>
+                                <div>
+                                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
+                                    <h2 class="info-title">Vue d'ensemble</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Département spécialisé dans les métiers de la finance, de la
+                                comptabilité et de
+                                l'audit. Référence régionale pour la maîtrise du droit comptable OHADA.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Filières</h4>
+                                    <ul>
+                                        <li>Comptabilité OHADA</li>
+                                        <li>Audit &amp; Contrôle</li>
+                                        <li>Banque &amp; Assurance</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Certifications</h4>
+                                    <ul>
+                                        <li>DSCG préparé</li>
+                                        <li>CPA Cameroun</li>
+                                        <li>Certif. COBAC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">Bac B/C/D</span><span
+                                    class="badge">OHADA</span><span class="badge accent">3 filières</span></div>
+                        </div>
+                        <div class="dept-info" id="com-finance-compta">
+                            <div class="info-header">
+                                <div class="info-icon">📒</div>
+                                <div>
+                                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
+                                    <h2 class="info-title">Comptabilité OHADA</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Comptabilité générale et analytique selon le SYSCOHADA. Traitement des
+                                opérations
+                                complexes, états financiers et outils ERP professionnels.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>SYSCOHADA révisé</li>
+                                        <li>Comptabilité analytique</li>
+                                        <li>Fiscalité camerounaise</li>
+                                        <li>Logiciels SAGE/SAP</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Comptable certifié</li>
+                                        <li>Chef comptable</li>
+                                        <li>Contrôleur de gestion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">SYSCOHADA</span><span class="badge">SAGE
+                                    certifié</span><span class="badge accent">Cabinets partenaires</span></div>
+                        </div>
+                        <div class="dept-info" id="com-finance-audit">
+                            <div class="info-header">
+                                <div class="info-icon">🔍</div>
+                                <div>
+                                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
+                                    <h2 class="info-title">Audit &amp; Contrôle de Gestion</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Audit interne, externe, contrôle de gestion budgétaire et tableaux de
+                                bord. Formation
+                                répondant à la forte demande en commissaires aux comptes au Cameroun.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Outils</h4>
+                                    <ul>
+                                        <li>Audit IFRS</li>
+                                        <li>Contrôle budgétaire</li>
+                                        <li>Tableau de bord BSC</li>
+                                        <li>Risk management</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Auditeur interne/externe</li>
+                                        <li>Commissaire aux comptes</li>
+                                        <li>Contrôleur de gestion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">IFRS</span><span class="badge">CPA
+                                    préparé</span><span class="badge accent">Big4 partenaires</span></div>
+                        </div>
+                        <div class="dept-info" id="com-finance-banque">
+                            <div class="info-header">
+                                <div class="info-icon">🏦</div>
+                                <div>
+                                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
+                                    <h2 class="info-title">Banque &amp; Assurance</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Opérations bancaires, analyse de crédit, microfinance et techniques
+                                d'assurance.
+                                Fortement lié au réseau bancaire CEMAC et aux institutions de microfinance.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Techniques bancaires</li>
+                                        <li>Analyse de crédit</li>
+                                        <li>Microfinance</li>
+                                        <li>Droit des assurances</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Chargé de clientèle</li>
+                                        <li>Analyste crédit</li>
+                                        <li>Directeur agence</li>
+                                        <li>Actuaire</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">COBAC agréé</span><span class="badge">Stages
+                                    SGBC/UBA</span><span class="badge accent">Microfinance</span></div>
+                        </div>
+                        <div class="dept-info" id="com-finance-otre">
+                            <div class="info-header">
+                                <div class="info-icon">🏦</div>
+                                <div>
+                                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
+                                    <h2 class="info-title">Banque &amp; Assurance</h2>
+                                </div>
+                            </div>
+                            <p class="info-desc">Opérations bancaires, analyse de crédit, microfinance et techniques
+                                d'assurance.
+                                Fortement lié au réseau bancaire CEMAC et aux institutions de microfinance.</p>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Modules</h4>
+                                    <ul>
+                                        <li>Techniques bancaires</li>
+                                        <li>Analyse de crédit</li>
+                                        <li>Microfinance</li>
+                                        <li>Droit des assurances</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Débouchés</h4>
+                                    <ul>
+                                        <li>Chargé de clientèle</li>
+                                        <li>Analyste crédit</li>
+                                        <li>Directeur agence</li>
+                                        <li>Actuaire</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-badges"><span class="badge">COBAC agréé</span><span class="badge">Stages
+                                    SGBC/UBA</span><span class="badge accent">Microfinance</span></div>
+                        </div>
+                    </div>
+                </div><!-- /panel-commerciale -->
+
+            </div><!-- /panels-wrapper -->
         </div>
-
-        <div class="panels-wrapper">
-          <!-- ══════════ GÉNÉRALE ══════════ -->
-          <div class="panel active" id="panel-generale">
-            <div class="panel-left">
-              <p class="panel-left-title">GENERALES</p>
-              <ul class="dept-list">
-                <li class="dept-group">
-                  <div
-                    class="dept-item has-sub active-group"
-                    data-group="grp-gen-lettres"
-                  >
-                    <span class="dept-dot"></span><span>Premier cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list open">
-                    <li class="sub-item active" data-target="gen-pcycle-6">
-                      6ieme
-                    </li>
-                    <li class="sub-item" data-target="gen-pcycle-5">5ieme</li>
-                    <li class="sub-item" data-target="gen-pcycle-4">4ieme</li>
-                    <li class="sub-item" data-target="gen-pcycle-3">3ieme</li>
-                  </ul>
-                </li>
-
-                <li class="dept-group">
-                  <div class="dept-item has-sub" data-group="grp-gen-lettres">
-                    <span class="dept-dot"></span><span>Second cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list open">
-                    <li class="sub-item" data-target="gen-cycle-lettre1">
-                      A1,A2,A3,A5 : LETTRES
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-humaine">
-                      SH : SCIENCES HUMAINES
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-ABI">
-                      ABI : BACCALAURÉAT INTERNATIONAL
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-B">
-                      B : SCIENCES ÉCONOMIQUES ET SOCIALES
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-C">
-                      C : MATHÉMATIQUES ET PHYSIQUES
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-D">
-                      D : MATHÉMATIQUES ET SVT
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-E">
-                      E : MATHÉMATIQUES ET TECHNIQUES
-                    </li>
-                    <li class="sub-item" data-target="gen-sciences-TI">
-                      TI : TECHNOLOGIES DE L'INFORMATION
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="panel-right">
-              <div class="dept-info active" id="gen-pcycle-6">
-                <div class="info-header">
-                  <div class="info-icon">📖</div>
-                  <div>
-                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La 6ème constitue l’introduction aux fondamentaux du
-                  secondaire. Les élèves découvrent les matières principales
-                  comme le français, les mathématiques, les sciences, l’histoire
-                  et la géographie. On y développe la compréhension écrite et
-                  orale, la logique mathématique et les premiers projets
-                  scientifiques. Des activités culturelles et sportives sont
-                  intégrées pour développer le sens critique, la créativité et
-                  la communication. L’objectif est de préparer l’élève à des
-                  choix éclairés pour le cycle suivant. Cette année permet
-                  également de renforcer les compétences sociales et
-                  organisationnelles, ainsi que la capacité à travailler en
-                  groupe et individuellement.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Licences disponibles</h4>
-                    <ul>
-                      <li>Lettres Modernes</li>
-                      <li>Anglais</li>
-                      <li>Langues Africaines</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Cycles supérieurs</h4>
-                    <ul>
-                      <li>Master Linguistique</li>
-                      <li>Doctorat Littérature</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">Tous cycles</span
-                  ><span class="badge accent">4 programmes</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-pcycle-5">
-                <div class="info-header">
-                  <div class="info-icon">✍️</div>
-                  <div>
-                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
-                    <h2 class="info-title">Licence Lettres Modernes</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Formation de 3 ans en littérature française et francophone,
-                  grammaire avancée, stylistique et analyse textuelle. Idéale
-                  pour l'enseignement et la communication.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules clés</h4>
-                    <ul>
-                      <li>Littérature française</li>
-                      <li>Littérature africaine</li>
-                      <li>Stylistique &amp; Rhétorique</li>
-                      <li>Grammaire avancée</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Professeur de Français</li>
-                      <li>Journaliste</li>
-                      <li>Auteur / Éditeur</li>
-                      <li>Communication d'entreprise</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A</span
-                  ><span class="badge">3 ans</span
-                  ><span class="badge">6 semestres</span
-                  ><span class="badge accent">Présentiel</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-pcycle-4">
-                <div class="info-header">
-                  <div class="info-icon">🇬🇧</div>
-                  <div>
-                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
-                    <h2 class="info-title">Licence Anglais</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Maîtrise de l'anglais académique et professionnel,
-                  civilisation anglo-saxonne, traduction et interprétation.
-                  Formation bilingue dans un contexte camerounais.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>English Literature</li>
-                      <li>Civilisation britannique</li>
-                      <li>Traduction FR/EN</li>
-                      <li>Anglais des affaires</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Traducteur / Interprète</li>
-                      <li>Enseignant d'anglais</li>
-                      <li>Relations internationales</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">Bilingue</span
-                  ><span class="badge accent">TOEFL préparé</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-pcycle-3">
-                <div class="info-header">
-                  <div class="info-icon">🇬🇧</div>
-                  <div>
-                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
-                    <h2 class="info-title">Licence Anglais</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Maîtrise de l'anglais académique et professionnel,
-                  civilisation anglo-saxonne, traduction et interprétation.
-                  Formation bilingue dans un contexte camerounais.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>English Literature</li>
-                      <li>Civilisation britannique</li>
-                      <li>Traduction FR/EN</li>
-                      <li>Anglais des affaires</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Traducteur / Interprète</li>
-                      <li>Enseignant d'anglais</li>
-                      <li>Relations internationales</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">Bilingue</span
-                  ><span class="badge accent">TOEFL préparé</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-cycle-lettre1">
-                <div class="info-header">
-                  <div class="info-icon">🔤</div>
-                  <div>
-                    <p class="info-breadcrumb">Lettres &amp; Langues</p>
-                    <h2 class="info-title">Master Linguistique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Programme de 2 ans (M1+M2) orienté recherche et appliqué.
-                  Couvre la phonologie, la morphosyntaxe, la sociolinguistique
-                  et les langues du Cameroun.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Spécialités</h4>
-                    <ul>
-                      <li>Sociolinguistique</li>
-                      <li>Analyse du discours</li>
-                      <li>Langues camerounaises</li>
-                      <li>TIC et linguistique</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Carrières</h4>
-                    <ul>
-                      <li>Chercheur / Enseignant-chercheur</li>
-                      <li>Lexicographe</li>
-                      <li>Expert UNESCO / OIF</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Licence requise</span
-                  ><span class="badge">4 semestres</span
-                  ><span class="badge accent">Thèse possible</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-humaine">
-                <div class="info-header">
-                  <div class="info-icon">🔬</div>
-                  <div>
-                    <p class="info-breadcrumb">Sciences Fondamentales</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La Faculté des Sciences propose des formations rigoureuses en
-                  Mathématiques, Physique, Chimie et Informatique théorique,
-                  orientées vers la recherche et les applications
-                  technologiques.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Filières</h4>
-                    <ul>
-                      <li>Mathématiques</li>
-                      <li>Physique-Chimie</li>
-                      <li>Sciences Naturelles</li>
-                      <li>Informatique Fond.</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Cycles</h4>
-                    <ul>
-                      <li>Licence 3 ans</li>
-                      <li>Master 2 ans</li>
-                      <li>Doctorat</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">Labos équipés</span
-                  ><span class="badge accent">4 options</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-ABI">
-                <div class="info-header">
-                  <div class="info-icon">📐</div>
-                  <div>
-                    <p class="info-breadcrumb">Sciences Fondamentales</p>
-                    <h2 class="info-title">Mathématiques</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Algèbre, Analyse, Probabilités-Statistiques et Mathématiques
-                  appliquées. Cursus exigeant préparant à la recherche pure et
-                  aux applications en ingénierie.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>Analyse réelle &amp; complexe</li>
-                      <li>Algèbre linéaire</li>
-                      <li>Probabilités &amp; Stats</li>
-                      <li>Mathématiques appliquées</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Enseignant-chercheur</li>
-                      <li>Actuaire</li>
-                      <li>Data Analyst</li>
-                      <li>Ingénieur R&D</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C</span
-                  ><span class="badge">Concours ENS</span
-                  ><span class="badge accent">Fortement sélectif</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-B">
-                <div class="info-header">
-                  <div class="info-icon">⚗️</div>
-                  <div>
-                    <p class="info-breadcrumb">Sciences Fondamentales</p>
-                    <h2 class="info-title">Physique-Chimie</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Mécanique, thermodynamique, chimie organique et analytique.
-                  Formation expérimentale intensive avec accès à des
-                  laboratoires modernes.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>TP phares</h4>
-                    <ul>
-                      <li>Spectroscopie</li>
-                      <li>Chimie analytique</li>
-                      <li>Optique &amp; électronique</li>
-                      <li>Thermodynamique exp.</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Technicien de labo</li>
-                      <li>Ingénieur procédés</li>
-                      <li>Chercheur IRD</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">Labo intensif</span
-                  ><span class="badge accent">Partenariats IRD</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-C">
-                <div class="info-header">
-                  <div class="info-icon">🖥️</div>
-                  <div>
-                    <p class="info-breadcrumb">Sciences Fondamentales</p>
-                    <h2 class="info-title">Informatique Fondamentale</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Algorithmique, structures de données, théorie des langages et
-                  intelligence artificielle fondamentale. Base solide pour le
-                  génie logiciel et la recherche.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>Algorithmique avancée</li>
-                      <li>Théorie des graphes</li>
-                      <li>Langages formels</li>
-                      <li>Introduction à l'IA</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Développeur senior</li>
-                      <li>Chercheur IA</li>
-                      <li>Architecte logiciel</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">Algo &amp; Théorie</span
-                  ><span class="badge accent">Master IA possible</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-D">
-                <div class="info-header">
-                  <div class="info-icon">⚖️</div>
-                  <div>
-                    <p class="info-breadcrumb">
-                      Droit &amp; Sciences Politiques
-                    </p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La Faculté des Sciences Juridiques forme les futurs juristes,
-                  diplomates et fonctionnaires. Les cursus couvrent le droit
-                  camerounais, OHADA et le droit international.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Spécialités</h4>
-                    <ul>
-                      <li>Droit Privé</li>
-                      <li>Droit Public</li>
-                      <li>Droit des Affaires</li>
-                      <li>Relations Internationales</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Partenariats</h4>
-                    <ul>
-                      <li>Barreau du Cameroun</li>
-                      <li>ENAM</li>
-                      <li>Cours suprême</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">Droit OHADA</span
-                  ><span class="badge accent">3 parcours</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-E">
-                <div class="info-header">
-                  <div class="info-icon">📜</div>
-                  <div>
-                    <p class="info-breadcrumb">
-                      Droit &amp; Sciences Politiques
-                    </p>
-                    <h2 class="info-title">Droit Privé</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Droit civil, droit de la famille, droit des contrats et
-                  successions. Formation axée sur la pratique judiciaire et le
-                  conseil aux particuliers.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>Droit civil</li>
-                      <li>Droit de la famille</li>
-                      <li>Droit des obligations</li>
-                      <li>Procédure civile</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Avocat</li>
-                      <li>Notaire</li>
-                      <li>Huissier de justice</li>
-                      <li>Magistrat</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">CRFPA préparé</span
-                  ><span class="badge accent">Stages tribunaux</span>
-                </div>
-              </div>
-              <div class="dept-info" id="gen-sciences-TI">
-                <div class="info-header">
-                  <div class="info-icon">🏛️</div>
-                  <div>
-                    <p class="info-breadcrumb">
-                      Droit &amp; Sciences Politiques
-                    </p>
-                    <h2 class="info-title">Droit Public</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Droit constitutionnel, droit administratif, finances publiques
-                  et décentralisation. Préparation aux concours de la fonction
-                  publique camerounaise.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <ul>
-                      <li>Droit constitutionnel</li>
-                      <li>Droit administratif</li>
-                      <li>Finances publiques</li>
-                      <li>Décentralisation</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Haut fonctionnaire</li>
-                      <li>Administrateur civil</li>
-                      <li>Juriste d'État</li>
-                      <li>Préfet / Sous-préfet</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac A/B</span
-                  ><span class="badge">Concours ENAM</span
-                  ><span class="badge accent">Fonction publique</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /panel-generale -->
-
-          <!-- ══════════ TECHNIQUE ══════════ -->
-          <div class="panel" id="panel-technique">
-            <div class="panel-left">
-              <p class="panel-left-title">TECHNIQUES</p>
-              <ul class="dept-list">
-                <li class="dept-group">
-                  <div
-                    class="dept-item has-sub active-group"
-                    data-group="grp-tech-isabee"
-                  >
-                    <span class="dept-dot"></span><span>Premier — Cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list open">
-                    <li class="sub-item active" data-target="tech-pcycle-elec">
-                      Electricité (ELEQ)
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-elect">
-                      Menuiserie‑Ameublement (MENA)
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-fc">
-                      Installation Sanitaire (INSA)
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-m">
-                      Maçonnerie
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-ma">
-                      Mecanique Automobile Electrique (MAEL)
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-co">
-                      Couture et Mesure (COME)
-                    </li>
-                    <li class="sub-item" data-target="tech-pcycle-me">
-                      Carrosserie‑Peinture Automobile (CAPA)
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="dept-group">
-                  <div class="dept-item has-sub" data-group="grp-tech-estm">
-                    <span class="dept-dot"></span><span>Second — Cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list">
-                    <li class="sub-item active" data-target="tech-scycle-afi">
-                      AF1;AF2;AF3 Artistique - Céramique
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-ci">
-                      CI Chimie Industrielle
-                    </li>
-                    <li class="sub-item active" data-target="tech-scycle-f1">
-                      F1 Fabrication mecanique
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f2">
-                      F2 Electronique
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f3">
-                      F3 Electrotechnique
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f4">
-                      F4/BE/BA/TP Génie Civil - Bureau d'etudes
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f5">
-                      F5 Froid et Climatisation
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f7">
-                      F7 Bioch/Biolo - Biochimie/Biologie
-                    </li>
-                    <li class="sub-item" data-target="tech-scycle-f8">
-                      F8 Sciences Medico Sociales
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="panel-right">
-              <div class="dept-info active" id="tech-pcycle-elec">
-                <div class="info-header">
-                  <div class="info-icon">💡</div>
-                  <div>
-                    <p class="info-breadcrumb">ELEQ</p>
-                    <h2 class="info-title">Electricite</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Électricité (ELEQ) forme des élèves aux bases de
-                  l’électricité et des installations électriques industrielles
-                  et domestiques. La formation inclut l’étude des circuits
-                  électriques, la production et la distribution de l’énergie, la
-                  sécurité électrique, le dépannage ainsi que les installations
-                  résidentielles et commerciales. Les élèves développent des
-                  compétences pratiques en atelier sur des systèmes réels,
-                  apprennent à lire des plans électriques et à utiliser des
-                  instruments de mesure. Le programme met aussi l’accent sur la
-                  maintenance préventive et corrective. Cette Filiere prépare
-                  les jeunes à être immédiatement opérationnels dans le secteur
-                  électrique dès l’obtention du diplôme.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CEFTI</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycee Technique de Douala-Koumassi</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Infrastructure</h4>
-                    <ul>
-                      <li>Technicien d’installation électrique</li>
-                      <li>Dépanneur électrique</li>
-                      <li>Chargé de maintenance d’appareils électriques</li>
-                      <li>Ouvrier qualifié en réseaux électriques</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D/F</span
-                  ><span class="badge">Terrain &amp; Labo</span
-                  ><span class="badge accent">4 filières</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-elect">
-                <div class="info-header">
-                  <div class="info-icon">🪵</div>
-                  <div>
-                    <p class="info-breadcrumb">MENA</p>
-                    <h2 class="info-title">Menuiserie‑Ameublement</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Menuiserie‑Ameublement (MENA) prépare les élèves à
-                  travailler le bois et ses dérivés. Les élèves apprennent les
-                  techniques, outils et machines pour la fabrication de meubles,
-                  portes, fenêtres et structures en bois. Ils étudient la
-                  sécurité en atelier, la lecture de plans, les types de bois et
-                  leurs propriétés. La formation combine théorie en salle et
-                  pratique intense en atelier. Les élèves savent dimensionner,
-                  découper, assembler et finir des produits en bois. Cette
-                  filière donne de solides compétences artisanales très
-                  demandées sur le marché local.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Menuisier industriel</li>
-                      <li>Ébéniste</li>
-                      <li>Fabricant de meubles</li>
-                      <li>Ouvrier qualifié en bois</li>
-                      <li>Ouvrier qualifié en bois</li>
-                      <li>Entrepreneur artisan</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">5 ans</span
-                  ><span class="badge accent">Stage terrain 6 mois</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-fc">
-                <div class="info-header">
-                  <div class="info-icon">🪠</div>
-                  <div>
-                    <p class="info-breadcrumb">INSA</p>
-                    <h2 class="info-title">Installation Sanitaire</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Installation Sanitaire (INSA) forme les élèves aux
-                  systèmes d’eau, d’assainissement et de plomberie. Ils étudient
-                  le montage des tuyaux, les installations de salle de bain, de
-                  cuisine et les réseaux d’évacuation. La formation inclut aussi
-                  la réparation des installations sanitaires et la prévention
-                  des fuites. On y apprend les normes sanitaires, la sécurité
-                  sur les chantiers et l’utilisation des outils spécialisés.
-                  Cette Filiere est idéale pour travailler dans des entreprises
-                  de services, de construction ou ouvrir sa propre activité
-                  d’artisan plombier
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Technicien en assainissement</li>
-                      <li>IInstallateur sanitaire</li>
-                      <li>Conseiller technique en réseaux d’eau</li>
-                      <li>Entrepreneur plomberie</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">MINFOF partenaire</span
-                  ><span class="badge accent">Forêt tropicale</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-m">
-                <div class="info-header">
-                  <div class="info-icon">⚒️</div>
-                  <div>
-                    <p class="info-breadcrumb">MACO</p>
-                    <h2 class="info-title">Maconnerie</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Maçonnerie (CAP MACO) forme aux techniques de
-                  construction du bâtiment. Les élèves apprennent les
-                  fondations, le montage des murs, la pose des briques, le
-                  scellement, le coffrage, le béton armé et la finition des
-                  surfaces. Ils étudient aussi la sécurité de chantier, les
-                  matériaux de construction et les méthodes de nivellement. Les
-                  stages pratiques en chantier permettent une expérience directe
-                  du travail. Cette Filiere est essentielle pour ceux qui
-                  veulent travailler dans l’industrie du bâtiment.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Maçon spécialisé</li>
-                      <li>Ouvrier qualifié en bâtiment</li>
-                      <li>Conseil en matériaux de construction</li>
-                      <li>Superviseur de petit chantier</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D/E</span
-                  ><span class="badge">Ferme expérimentale</span
-                  ><span class="badge accent">MINEPIA agréé</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-ma">
-                <div class="info-header">
-                  <div class="info-icon">🛠️</div>
-                  <div>
-                    <p class="info-breadcrumb">MAEL</p>
-                    <h2 class="info-title">Mécanique Automobile Électrique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Mécanique Automobile Électrique (MAEL) forme à la
-                  maintenance et réparation des systèmes électriques des
-                  véhicules. Les élèves apprennent l’électricité automobile, le
-                  diagnostic électronique, le contrôle des circuits, les
-                  systèmes de démarrage et d’allumage, ainsi que l’entretien de
-                  batteries. Cette spécialité est essentielle dans
-                  l’environnement automobile moderne.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Technicien électricité auto</li>
-                      <li>Dépanneur auto électrique</li>
-                      <li>Assistant en maintenance auto</li>
-                      <li>Diagnostiqueur automobile</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D/E</span
-                  ><span class="badge">Secteur stratégique</span
-                  ><span class="badge accent">3 filières</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-co">
-                <div class="info-header">
-                  <div class="info-icon">🪡</div>
-                  <div>
-                    <p class="info-breadcrumb">COME</p>
-                    <h2 class="info-title">Couture et Mesure</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Couture et Mesure (COME) forme des élèves aux
-                  techniques de coupe, de couture, de montage de vêtements et
-                  d’ajustement sur mesure. La formation inclut la théorie des
-                  textiles, la prise de mesures, le patronage, la coupe,
-                  l’utilisation de machines à coudre ainsi que la finition des
-                  vêtements. On y apprend aussi la gestion d’un petit atelier,
-                  la relation clientèle et la création de modèles adaptés aux
-                  tendances du marché. Cette filiere est une excellente porte
-                  d’entrée dans l’artisanat de la mode.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Modules</h4>
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycee Technique de Douala-Koumassi</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Couturier professionnel</li>
-                      <li>GArtisan designer de vêtements</li>
-                      <li>Responsable d’atelier de couture</li>
-                      <li>Styliste-Modéliste</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/E</span
-                  ><span class="badge">5 ans</span
-                  ><span class="badge accent">Stage mine obligatoire</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-pcycle-me">
-                <div class="info-header">
-                  <div class="info-icon">🚗</div>
-                  <div>
-                    <p class="info-breadcrumb">CAPA</p>
-                    <h2 class="info-title">
-                      Carosserie et Peinture Automobile
-                    </h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Carrosserie‑Peinture Automobile (CAPA) prépare au
-                  travail sur carrosserie de véhicules, réparation des chocs,
-                  redressage des tôles, préparation des surfaces et application
-                  de peintures spécialisées. Les élèves apprennent les normes de
-                  sécurité, les techniques de décapage, de ponçage, de soudure
-                  légère et la finition esthétique. La formation est très
-                  pratique et adaptée à l’industrie automobile ou aux garages
-                  indépendants.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycee Technique de Douala-Koumassi</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Carrossier automobile</li>
-                      <li>Agent de maintenance auto</li>
-                      <li>Contrôleur qualité carrosserie</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/E</span
-                  ><span class="badge">AES-Sonel agréé</span
-                  ><span class="badge accent">Futur porteur</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-afi">
-                <div class="info-header">
-                  <div class="info-icon">🩺</div>
-                  <div>
-                    <p class="info-breadcrumb">AF1,AF2,AF3</p>
-                    <h2 class="info-title">Artistique-Ceramique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Cursus de 7 ans organisé en 3 cycles : PCEM, DCEM et
-                  Externat/Internat. Formation clinique intensive au CHU de
-                  Bertoua dès la 3e année.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Cycles</h4>
-                    <ul>
-                      <li>PCEM1 &amp; PCEM2</li>
-                      <li>DCEM (4 ans)</li>
-                      <li>Internat / Résidanat</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Spécialisations</h4>
-                    <ul>
-                      <li>Chirurgie générale</li>
-                      <li>Pédiatrie</li>
-                      <li>Gynéco-obstétrique</li>
-                      <li>Médecine tropicale</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac C/D</span
-                  ><span class="badge">7 ans minimum</span
-                  ><span class="badge accent">Doctorat d'État</span>
-                </div>
-              </div>
-
-              <div class="dept-info" id="tech-scycle-ci">
-                <div class="info-header">
-                  <div class="info-icon">👨‍💻</div>
-                  <div>
-                    <p class="info-breadcrumb">Génie Informatique</p>
-                    <h2 class="info-title">Développement Logiciel</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Web, mobile, backend et DevOps. Apprentissage des langages
-                  modernes (Python, JavaScript, Kotlin) et des méthodologies
-                  agiles pour créer des solutions numériques africaines.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Technologies</h4>
-                    <ul>
-                      <li>Web (React, Django)</li>
-                      <li>Mobile (Flutter, Kotlin)</li>
-                      <li>API REST &amp; GraphQL</li>
-                      <li>Cloud &amp; DevOps</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Dev full-stack</li>
-                      <li>Dev mobile</li>
-                      <li>Architecte logiciel</li>
-                      <li>CTO startup</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Projets réels</span
-                  ><span class="badge">GitHub portfolio</span
-                  ><span class="badge accent">Hackathons</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-f1">
-                <div class="info-header">
-                  <div class="info-icon">🛠️</div>
-                  <div>
-                    <p class="info-breadcrumb">F1</p>
-                    <h2 class="info-title">Construction Mécanique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  forme les élèves aux techniques de conception et maintenance
-                  des systèmes mécaniques industriels. Les cours incluent
-                  machines-outils, dessin industriel, méthodes de fabrication et
-                  sécurité. Les travaux pratiques et projets permettent de
-                  maîtriser les équipements et les processus de production. La
-                  série développe la précision, la créativité technique, la
-                  capacité d’analyse et le travail en équipe. Les élèves
-                  apprennent à résoudre des problèmes techniques complexes et à
-                  s’adapter aux évolutions technologiques. Cette formation
-                  prépare à des carrières industrielles et de maintenance.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycee Technique de Douala-Koumassi</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Maintenance industrielle</li>
-                      <li>Opérateur CNC</li>
-                      <li>Constructeur Metallique</li>
-                      <li>Superviseur de production</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">CAP & BEPC</span>
-                  <span class="badge accent">De Seconde en Terminale</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-f2">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">F2</p>
-                    <h2 class="info-title">Electronique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  forme aux composants électroniques, circuits simples et
-                  systèmes de communication. Les élèves réalisent des travaux
-                  pratiques en laboratoire et des projets de montage et
-                  dépannage. L’apprentissage inclut les microcontrôleurs,
-                  l’électronique numérique et analogique, les normes de sécurité
-                  et la lecture de schémas. Les élèves développent la rigueur,
-                  la logique technique, la capacité d’analyse et la résolution
-                  de problèmes. Cette série prépare à des métiers de maintenance
-                  et conception électronique, tout en favorisant l’innovation et
-                  l’adaptation aux technologies.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>technicien maintenance électronique</li>
-                      <li>Télécom</li>
-                      <li>Superviseur de projet électronique</li>
-                      <li>Consultant télécom</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">GPU Cluster</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-f3">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">F3</p>
-                    <h2 class="info-title">Electrotechnique</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  initie aux systèmes moteurs, transmission, entretien et
-                  diagnostic des véhicules. Les élèves apprennent la réparation,
-                  la maintenance et l’optimisation des performances automobiles.
-                  Les travaux pratiques en atelier renforcent la maîtrise
-                  technique et la sécurité. Les élèves développent l’esprit
-                  d’analyse, la résolution de problèmes mécaniques, la précision
-                  et le travail en équipe. La filière prépare à des carrières en
-                  mécanique automobile et industrie automobile. Les projets
-                  pratiques permettent de comprendre la technologie moderne et
-                  les innovations techniques.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Mécanicien</li>
-                      <li>Technicien automobile</li>
-                      <li>Préparateur moteurs</li>
-                      <li>Consultant en maintenance auto</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">GPU Cluster</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-f4">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">F4</p>
-                    <h2 class="info-title">Genie Civil</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  F4 initie aux techniques de construction, béton, maçonnerie et
-                  dessin de plans. Les élèves participent à des projets
-                  pratiques et travaux de terrain pour comprendre les normes et
-                  procédés. L’enseignement développe la précision, la
-                  planification, la sécurité et l’organisation. Les élèves
-                  acquièrent les bases nécessaires pour les métiers du bâtiment
-                  et du génie civil. Les projets pratiques et théoriques
-                  permettent de résoudre des problèmes techniques complexes. La
-                  série prépare à des études supérieures en BTP et gestion de
-                  chantier.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Technicien en BTP</li>
-                      <li>Maçon qualifié</li>
-                      <li>Assistant conducteur de travaux</li>
-                      <li>Superviseur chantier</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">F</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-
-              <div class="dept-info" id="tech-scycle-f5">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">F5</p>
-                    <h2 class="info-title">Froid et Climatisation</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Machine Learning, NLP, vision par ordinateur et analyse de
-                  données massives. Axé sur les applications concrètes en santé,
-                  agriculture et finance en Afrique.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi</li>
-                      <li>CETIC de Deido</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>CEFTI</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Data Scientist</li>
-                      <li>Ingénieur ML</li>
-                      <li>Analyste BI</li>
-                      <li>Chercheur IA</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">GPU Cluster</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-              <div class="dept-info" id="tech-scycle-f7">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">Génie Informatique</p>
-                    <h2 class="info-title">IA &amp; Data Science</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Machine Learning, NLP, vision par ordinateur et analyse de
-                  données massives. Axé sur les applications concrètes en santé,
-                  agriculture et finance en Afrique.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Technologies</h4>
-                    <ul>
-                      <li>Python / TensorFlow</li>
-                      <li>NLP &amp; LLMs</li>
-                      <li>Big Data (Spark)</li>
-                      <li>Visualisation (PowerBI)</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Data Scientist</li>
-                      <li>Ingénieur ML</li>
-                      <li>Analyste BI</li>
-                      <li>Chercheur IA</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">GPU Cluster</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-
-              <div class="dept-info" id="tech-scycle-f8">
-                <div class="info-header">
-                  <div class="info-icon">🤖</div>
-                  <div>
-                    <p class="info-breadcrumb">Génie Informatique</p>
-                    <h2 class="info-title">IA &amp; Data Science</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Machine Learning, NLP, vision par ordinateur et analyse de
-                  données massives. Axé sur les applications concrètes en santé,
-                  agriculture et finance en Afrique.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Technologies</h4>
-                    <ul>
-                      <li>Python / TensorFlow</li>
-                      <li>NLP &amp; LLMs</li>
-                      <li>Big Data (Spark)</li>
-                      <li>Visualisation (PowerBI)</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Data Scientist</li>
-                      <li>Ingénieur ML</li>
-                      <li>Analyste BI</li>
-                      <li>Chercheur IA</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">GPU Cluster</span
-                  ><span class="badge">Datasets africains</span
-                  ><span class="badge accent">Nouveau programme</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /panel-technique -->
-
-          <!-- ══════════ COMMERCIALE ══════════ -->
-          <div class="panel" id="panel-commerciale">
-            <div class="panel-left">
-              <p class="panel-left-title">Commerciale</p>
-              <ul class="dept-list">
-                <li class="dept-group">
-                  <div
-                    class="dept-item has-sub active-group"
-                    data-group="grp-com-gestion"
-                  >
-                    <span class="dept-dot"></span><span>Premier Cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list open">
-                    <li
-                      class="sub-item active"
-                      data-target="com-gestion-overview"
-                    >
-                      Comptabilité (COM)
-                    </li>
-                    <li class="sub-item" data-target="com-gestion-licence">
-                      Secrétariat & Bureautique (SECRET)
-                    </li>
-                    <li class="sub-item" data-target="com-gestion-mba1">
-                      Vente & Commerce (VENTE)
-                    </li>
-                    <li class="sub-item" data-target="com-gestion-mba2">
-                      Gestion & Administration (GESTION)
-                    </li>
-                    <li class="sub-item" data-target="com-gestion-mba3">
-                      Analyse de Données & Informatique Commerciale (ADCI)
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="dept-group">
-                  <div class="dept-item has-sub" data-group="grp-com-finance">
-                    <span class="dept-dot"></span><span>Second Cycle</span>
-                    <svg class="arrow" viewBox="0 0 24 24">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </div>
-                  <ul class="sub-list">
-                    <li class="sub-item" data-target="com-finance-overview2">
-                      CG
-                    </li>
-                    <li class="sub-item" data-target="com-finance-compta">
-                      ACC
-                    </li>
-                    <li class="sub-item" data-target="com-finance-audit">
-                      ACA
-                    </li>
-                    <li class="sub-item" data-target="com-finance-banque">
-                      FIG
-                    </li>
-                    <li class="sub-item" data-target="com-finance-otre">SES</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="panel-right">
-              <div class="dept-info active" id="com-gestion-overview">
-                <div class="info-header">
-                  <div class="info-icon">🏢</div>
-                  <div>
-                    <p class="info-breadcrumb">Comptabilité &amp; Gestion</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière comptabilité-gestion est un pilier stratégique de
-                  l'entreprise, garantissant sa santé financière, la conformité
-                  fiscale et l'enregistrement rigoureux des flux. Avec de forts
-                  débouchés (comptable, contrôleur de gestion, auditeur), elle
-                  offre des carrières stables et évolutives, allant de la PME au
-                  cabinet.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CEFTI</li>
-                      <li>Lycée Technique commerciale de Yaounde</li>
-                      <li>Lycée Bilingue d'application session technique</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Comptable & Responsable Comptable</li>
-                      <li>Controleur de gestion</li>
-                      <li>Trésorerie</li>
-                      <li>Gestionnaire de paie</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Comptabilité</span
-                  ><span class="badge">Mathématique</span
-                  ><span class="badge accent">Mathématique appliquée</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-gestion-licence">
-                <div class="info-header">
-                  <div class="info-icon">📊</div>
-                  <div>
-                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Secrétariat & Bureautique forme les élèves aux
-                  tâches de bureau, à la gestion de documents et à la
-                  communication administrative. Les élèves apprennent la
-                  dactylographie, la gestion des appels téléphoniques, l’accueil
-                  physique, la correspondance professionnelle, le classement et
-                  l’archivage des dossiers. La filière inclut aussi des leçons
-                  de bureautique (traitement de texte, tableur, création de
-                  présentations), ce qui permet aux jeunes d’être rapidement
-                  opérationnels dans un contexte de bureau moderne. On met
-                  l’accent sur la rigueur, la bonne communication,
-                  l’organisation et le respect des délais. Les élèves effectuent
-                  des stages pratiques pour se familiariser avec le travail en
-                  entreprise ou en administration publique.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi (Douala)</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycées techniques privés</li>
-                      <li>Lycée Technique d’arrondissement</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Secrétaire administratif</li>
-                      <li>Réceptionniste d'entreprise</li>
-                      <li>Archiviste ou gestionnaire de documents</li>
-                      <li>Assistant de ressources humaines</li>
-                      <li>Assistant de bureau</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Informatique</span
-                  ><span class="badge">Francais</span
-                  ><span class="badge accent">Communication</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-gestion-mba1">
-                <div class="info-header">
-                  <div class="info-icon">🏆</div>
-                  <div>
-                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Vente & Commerce est conçue pour initier les élèves
-                  aux activités commerciales et aux techniques de vente. Les
-                  élèves apprennent les principes de la distribution, la gestion
-                  des stocks, l’accueil de la clientèle, la préparation de
-                  commandes, la négociation commerciale de base et les
-                  opérations de caisse. Le programme inclut des notions de
-                  marketing simple, d’éthique commerciale et de merchandising
-                  pour optimiser la présentation des produits. La formation vise
-                  à développer l’esprit de service, l’aisance relationnelle, la
-                  connaissance des produits et l’efficacité dans les
-                  transactions. La filière prépare les jeunes à travailler
-                  directement dans le secteur du commerce ou à créer leurs
-                  propres petites unités commerciales.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi (Douala)</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycées techniques privés</li>
-                      <li>Centres commerciaux formateurs</li>
-                      <li>Lycées techniques publics</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Vendeur en boutique ou supermarché</li>
-                      <li>Caissier ou opérateur de point de vente</li>
-                      <li>Agent de distribution</li>
-                      <li>Représentant commercial</li>
-                      <li>Assistants de gestion de point de vente</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Comptabilité</span
-                  ><span class="badge">Marketing</span
-                  ><span class="badge accent">Economie d'entreprise</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-gestion-mba2">
-                <div class="info-header">
-                  <div class="info-icon">🏆</div>
-                  <div>
-                    <p class="info-breadcrumb">Gestion &amp;</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  La filière Gestion & Administration associe des éléments de
-                  comptabilité, de bureautique et d’organisation administrative.
-                  Elle donne une formation plus large que la Comptabilité seule,
-                  avec des notions de planification, d’organisation de réunions,
-                  de traitement des données et de gestion documentaire. Les
-                  élèves apprennent aussi à préparer des rapports, à travailler
-                  avec des logiciels de gestion administrative, et à coordonner
-                  des opérations de bureau. Cette filière est idéale pour ceux
-                  qui souhaitent travailler dans des services administratifs,
-                  des ONG, des PME, des collectivités ou des structures
-                  publiques. Elle développe l’esprit d’analyse, la rigueur
-                  organisationnelle et les compétences techniques de travail de
-                  bureau.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC de Bonaberi (Douala)</li>
-                      <li>CETIC de Yaoundé</li>
-                      <li>Lycées techniques privés</li>
-                      <li>Centres commerciaux formateurs</li>
-                      <li>Lycées techniques publics</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-
-                    <ul>
-                      <li>Assistant administratif</li>
-                      <li>Coordination de bureau</li>
-                      <li>Gestionnaire de PME</li>
-                      <li>Assistant de projet</li>
-                      <li>Facilitateur administratif</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Comptabilité</span
-                  ><span class="badge">Economie</span
-                  ><span class="badge accent">Statistique</span>
-                  <span class="badge accent">Mathématique Appliquée</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-gestion-mba3">
-                <div class="info-header">
-                  <div class="info-icon">🏆</div>
-                  <div>
-                    <p class="info-breadcrumb">Gestion &amp; Administration</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  Cette filière prépare les élèves au traitement des données
-                  commerciales à l’aide d’outils informatiques professionnels.
-                  Ils apprennent à utiliser des logiciels de gestion de base de
-                  données, des feuilles de calculs avancées, l’analyse
-                  statistique appliquée au commerce, les systèmes d’information
-                  commerciale et la visualisation de données. La filière combine
-                  des notions de commerce et d’informatique, ce qui donne une
-                  base solide pour les métiers modernes où l’analyse des données
-                  est essentielle. Idéale pour ceux qui veulent travailler dans
-                  des départements de données, d’audit ou de pilotage
-                  commercial.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>CETIC Spétialisé</li>
-                      <li>Lycée technique avec option informatique</li>
-                      <li>Centre de formation numérique</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Technicien analyste de données</li>
-                      <li>Assistant commercial informatique</li>
-                      <li>Gestionnaire de base de donnée commerciale</li>
-                      <li>Assistant en digitalisation</li>
-                      <li>Analyste junior</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Informatique</span
-                  ><span class="badge">Statistique</span
-                  ><span class="badge accent">Gestion</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-finance-overview2">
-                <div class="info-header">
-                  <div class="info-icon">💰</div>
-                  <div>
-                    <p class="info-breadcrumb">CG</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  CG approfondit la comptabilité et gestion financière, avec
-                  analyse des coûts, bilans complexes et logiciels de gestion.
-                  Les élèves réalisent des projets pratiques et exercices
-                  avancés, développant rigueur et organisation. Cette série
-                  prépare aux métiers administratifs et financiers, tout en
-                  renforçant les compétences analytiques et la résolution de
-                  problèmes. Les élèves apprennent la communication
-                  professionnelle, la gestion de projets et le travail en
-                  équipe. La formation inclut études de cas, simulations et
-                  stages pratiques.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Filières</h4>
-                    <ul>
-                      <li>Comptabilité OHADA</li>
-                      <li>Audit &amp; Contrôle</li>
-                      <li>Banque &amp; Assurance</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Certifications</h4>
-                    <ul>
-                      <li>DSCG préparé</li>
-                      <li>CPA Cameroun</li>
-                      <li>Certif. COBAC</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Bac B/C/D</span
-                  ><span class="badge">OHADA</span
-                  ><span class="badge accent">3 filières</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-finance-compta">
-                <div class="info-header">
-                  <div class="info-icon">📒</div>
-                  <div>
-                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
-                    <h2 class="info-title">Comptabilité OHADA</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  ACC forme aux techniques de marketing, communication
-                  commerciale, ventes et publicité. Les élèves apprennent à
-                  élaborer des stratégies commerciales, gérer campagnes
-                  publicitaires, utiliser les outils numériques et analyser les
-                  marchés. La série inclut travaux pratiques, études de cas et
-                  projets collaboratifs. Les compétences développées comprennent
-                  communication, créativité, organisation, négociation et
-                  analyse. La formation prépare aux métiers du marketing, de la
-                  vente et de la gestion de la relation client. Les projets
-                  permettent de simuler des situations professionnelles réelles.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>Lycée commercial douala</li>
-                      <li>Lycée commercial Yaoundé</li>
-                      <li>Lycée de Garoua</li>
-                      <li>Lycée bilingue de Nkongsamba</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Chargé clientele</li>
-                      <li>Responsable marketing</li>
-                      <li>Assitant communication</li>
-                      <li>Analyste marketing</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Statistique</span
-                  ><span class="badge">Mathématique</span
-                  ><span class="badge accent">Physique</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-finance-audit">
-                <div class="info-header">
-                  <div class="info-icon">🔍</div>
-                  <div>
-                    <p class="info-breadcrumb">ACA</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  ACA développe les compétences en administration et commerce
-                  avancé. Les élèves apprennent gestion de projets,
-                  planification, comptabilité, communication et outils
-                  numériques. Les projets pratiques permettent de travailler sur
-                  des cas réels et de résoudre des problèmes organisationnels.
-                  La série prépare aux métiers administratifs et commerciaux.
-                  Les élèves développent rigueur, esprit critique, organisation
-                  et leadership. Les stages et travaux pratiques renforcent
-                  l’insertion professionnelle et la compréhension des
-                  environnements économiques.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>Lycée commercial douala</li>
-                      <li>Lycée commercial Yaoundé</li>
-                      <li>CETIC de Yaounde</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Assistant gestionnaire</li>
-                      <li>Administrateur de bureau</li>
-                      <li>Responsable du service</li>
-                      <li>Consultatant en organisation</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Mathématique</span
-                  ><span class="badge">Mathématique</span
-                  ><span class="badge accent">Gestion</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-finance-banque">
-                <div class="info-header">
-                  <div class="info-icon">🏦</div>
-                  <div>
-                    <p class="info-breadcrumb">Finance &amp; Comptabilité</p>
-                    <h2 class="info-title">Banque &amp; Assurance</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  FIG initie aux finances, informatique et gestion. Les élèves
-                  étudient analyse financière, comptabilité avancée, logiciels
-                  de gestion, fiscalité et communication professionnelle. Les
-                  travaux pratiques et projets permettent de développer rigueur,
-                  précision et capacité analytique. La série prépare aux métiers
-                  financiers et de gestion, tout en renforçant la compréhension
-                  des outils numériques. Les compétences développées incluent
-                  résolution de problèmes, organisation et leadership. Les
-                  élèves réalisent des projets simulant des situations
-                  professionnelles réelles.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>Lycée commercial douala</li>
-                      <li>Lycée commercial Yaoundé</li>
-                      <li>CETIC de Yaounde</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Analyse financier</li>
-                      <li>Comptable</li>
-                      <li>Auditeur</li>
-                      <li>Assistant gestion</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Comptabilité</span
-                  ><span class="badge">Gestion</span
-                  ><span class="badge accent">Mathématique</span>
-                </div>
-              </div>
-              <div class="dept-info" id="com-finance-otre">
-                <div class="info-header">
-                  <div class="info-icon">🏦</div>
-                  <div>
-                    <p class="info-breadcrumb">FIG</p>
-                    <h2 class="info-title">Vue d'ensemble</h2>
-                  </div>
-                </div>
-                <p class="info-desc">
-                  SES développe les connaissances en sciences économiques et
-                  sociales. Les élèves apprennent économie, sociologie, gestion,
-                  communication et statistiques appliquées. Les projets
-                  pratiques et études de cas permettent de simuler des
-                  situations réelles. La série prépare aux métiers en économie,
-                  commerce, gestion et relations sociales. Les élèves
-                  développent analyse critique, esprit synthétique, organisation
-                  et communication. La formation inclut stages et projets pour
-                  renforcer l’insertion professionnelle et la compréhension des
-                  environnements économiques.
-                </p>
-                <div class="info-grid">
-                  <div class="info-card">
-                    <h4>Etablissements</h4>
-                    <ul>
-                      <li>Lycée commercial douala</li>
-                      <li>Lycée commercial Yaoundé</li>
-                      <li>Lycée de Garoua</li>
-                      <li>CETIC de Yaounde</li>
-                    </ul>
-                  </div>
-                  <div class="info-card">
-                    <h4>Débouchés</h4>
-                    <ul>
-                      <li>Econonmiste</li>
-                      <li>Chargé de projet</li>
-                      <li>Consultant en organisation</li>
-                      <li>Responsable administratif</li>
-                      <li>Analyste administratif</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="info-badges">
-                  <span class="badge">Economie</span
-                  ><span class="badge">Gestion</span
-                  ><span class="badge accent">Mathématique</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- /panel-commerciale -->
-        </div>
-        <!-- /panels-wrapper -->
-      </div>
     </section>
     <!-- FOOTER -->
     <footer class="footer">
-      <p><strong>Oriceft</strong> — Douala, Cameroun</p>
-      <p style="margin-top: 8px">© 2026 Oriceft. Tous droits réservés.</p>
+        <p><strong>Oriceft</strong> — Douala, Cameroun</p>
+        <p style="margin-top:8px">© 2026 Oriceft. Tous droits réservés.</p>
     </footer>
 
     <script src="../js/filiere.js"></script>
     <script>
-      const menuToogle = document.querySelector(".hamburgerToogle");
-      const menuLinks = document.querySelector(".navlink");
-      menuToogle.addEventListener("click", function () {
-        menuLinks.classList.toggle("active");
-        menuToogle.classList.toggle("active");
-      });
-    </script>
-  </body>
+     const menuToogle = document.querySelector('.hamburgerToogle');
+        const menuLinks = document.querySelector('.navlink');
+        menuToogle.addEventListener('click',function() {
+           menuLinks.classList.toggle('active');
+           menuToogle.classList.toggle('active');
+        })
+</script>
+</body>
+
 </html>
