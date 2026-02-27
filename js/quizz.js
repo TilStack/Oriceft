@@ -7,6 +7,9 @@ const submitBtn = document.getElementById("submitBtn");
 const questionNumber = document.getElementById("questionNumber");
 const progressPercent = document.getElementById("progressPercent");
 const progressBar = document.getElementById("progressBar");
+//Recuperons les parametres de la page précedente
+const params = new URLSearchParams(window.location.search);
+const niveauFromPage1 = params.get("niveau");
 
 function updateProgress(index) {
     // Calcul du pourcentage : (index actuel + 1) / total
@@ -54,17 +57,69 @@ function prevQuestion() {
     }
 }
 
+//Code modifié
 function checkAnswer() {
     const inputs = questions[current].querySelectorAll("input");
     let answered = false;
 
     inputs.forEach(input => {
         if (input.checked) answered = true;
-        input.addEventListener("change", checkAnswer);
     });
 
     nextBtn.disabled = !answered;
 }
+document.addEventListener("change", checkAnswer);
+
+//Code modifié
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const answers = getAllAnswers();
+
+    console.log("Objet JS :", answers);
+
+    const jsonData = JSON.stringify(answers);
+
+    console.log("JSON :", jsonData);
+
+    // ENVOI VERS PHP
+    fetch("save.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: jsonData
+    })
+        .then(res => res.text())
+        .then(data => {
+            console.log("Réponse serveur :", data);
+            alert("Enregistré !");
+            window.location.href = "../html/resultat.html";
+        })
+        .catch(err => console.error(err));
+});
 
 // Initialisation
 showQuestion(current);
+
+function getAllAnswers() {
+    const form = document.querySelector("form");
+    const formData = new FormData(form);
+
+    const data = {};
+
+    for (let [key, value] of formData.entries()) {
+
+        // Gestion des checkbox multiples
+        if (data[key]) {
+            if (!Array.isArray(data[key])) {
+                data[key] = [data[key]];
+            }
+            data[key].push(value);
+        } else {
+            data[key] = value;
+        }
+    }
+    data.niveau = niveauFromPage1;
+    return data;
+}
