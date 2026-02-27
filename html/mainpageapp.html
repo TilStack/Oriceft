@@ -97,30 +97,22 @@
         </div>
     </div>
     <script>
-        const radios = document.querySelectorAll('input[name="niveau"]');
         const suivant = document.querySelector('.btnNext');
-        suivant.addEventListener("click", function () {
-            location.href = "#";
-        });
-        radios.forEach(radio => {
-            radio.addEventListener("change", function () {
-                console.log("Niveau sélectionné :", this.value);
-            });
-        });
-        function getSelectedLevel() {
+
+        suivant.addEventListener("click", function (e) {
+            e.preventDefault(); // important si bouton dans un form
+
             const selected = document.querySelector('input[name="niveau"]:checked');
 
             if (selected) {
-                return selected.value;
+                console.log("Niveau choisi :", selected.value);
+
+                // Redirection vers la page suivante
+                window.location.href = "quizz.html?niveau=" + selected.value;
+
             } else {
                 alert("Veuillez sélectionner un niveau");
-                return null;
             }
-        }
-
-        document.querySelector(".btnNext")?.addEventListener("click", () => {
-            const niveau = getSelectedLevel();
-            console.log(niveau);
         });
     </script>
 </body>
