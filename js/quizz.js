@@ -75,30 +75,14 @@ document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const answers = getAllAnswers();
+    const jsonData = JSON.stringify(answers, null, 2);
 
-    console.log("Objet JS :", answers);
+    alert("Analyse en cours...\n\n" + jsonData);
 
-    const jsonData = JSON.stringify(answers);
+    localStorage.setItem("quizResults", jsonData);
 
-    console.log("JSON :", jsonData);
-
-    // ENVOI VERS PHP
-    fetch("save.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: jsonData
-    })
-        .then(res => res.text())
-        .then(data => {
-            console.log("Réponse serveur :", data);
-            alert("Enregistré !");
-            window.location.href = "../html/resultat.html";
-        })
-        .catch(err => console.error(err));
+    window.location.href = "../html/loading.html";
 });
-
 // Initialisation
 showQuestion(current);
 
