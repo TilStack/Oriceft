@@ -1,120 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>orientation</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Orientation Scolaire - Cameroun</title>
+    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />
     <link rel="stylesheet" href="../css/mainpageapp.css">
-    <link rel="stylesheet" href="/css/mainpageapp_responsive.css">
+    <link rel="stylesheet" href="../css/mainpageapp_responsive.css">
 </head>
-
 <body>
     <div id="app">
-        <div class="screen connect">
+        <main class="screen connect">
             <div class="form-wrapper">
-                <h2>Remplissez les informations suivantes</h2>
-                <form id="form">
-                    <div class="name">
-                        <label for="name">Nom :</label>
-                        <input type="text" name="name" placeholder="Entrer votre nom !">
+                <h2>Remplissez les informations</h2>
+                <form id="orientationForm">
+                    <div class="input-group">
+                        <label for="name" id="nom">Nom :</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
                     </div>
-                    <div class="name">
-                        <label for="surname">Prénom :</label>
-                        <input type="text" name="surname" placeholder="Entrer votre prénom !">
+                    
+                    <div class="input-group">
+                        <label for="surname" id="prenom">Prénom :</label>
+                        <input type="text" id="surname" name="surname" placeholder="Votre prénom" required>
                     </div>
-                    <div class="selection">
-                        <label for="niveau">Niveau</label>
-                        <div class="content">
-                            <div class="level-selection">
 
-                                <div class="level-item">
-                                    <input type="radio" name="niveau" id="lvl1" value="1ere">
-                                    <label for="lvl1">
-                                        <div class="icon">📖</div>
-                                        <span>De 1ère à 4ieme année</span>
-                                    </label>
-                                </div>
+                    <div class="selection-container">
+                        <label class="section-title">Quel est votre dernier diplôme ?</label>
+                        <div class="level-selection">
+                            <div class="level-item">
+                                <input type="radio" name="niveau" id="lvl_cep" value="CEP" required>
+                                <label for="lvl_cep">
+                                    <div class="icon">📖</div>
+                                    <span>CEP</span>
+                                </label>
+                            </div>
 
-                                <div class="level-item">
-                                    <input type="radio" name="niveau" id="lvl2" value="5eme">
-                                    <label for="lvl2">
-                                        <div class="icon">📖</div>
-                                        <span>De 6ieme à 3 ieme</span>
-                                    </label>
-                                </div>
+                            <div class="level-item">
+                                <input type="radio" name="niveau" id="lvl_bepc" value="BEPC">
+                                <label for="lvl_bepc">
+                                    <div class="icon">🎓</div>
+                                    <span>BEPC</span>
+                                </label>
+                            </div>
 
-                                <div class="level-item">
-                                    <input type="radio" name="niveau" id="lvl3" value="seconde">
-                                    <label for="lvl3">
-                                        <div class="icon">🎓</div>
-                                        <span>2nd à Tle Industrielle</span>
-                                    </label>
-                                </div>
-
-                                <div class="level-item">
-                                    <input type="radio" name="niveau" id="lvl4" value="seconde">
-                                    <label for="lvl4">
-                                        <div class="icon">🎓</div>
-                                        <span>2nd à Tle commerciale</span>
-                                    </label>
-                                </div>
-
-                                <div class="level-item">
-                                    <input type="radio" name="niveau" id="lvl5" value="seconde">
-                                    <label for="lvl5">
-                                        <div class="icon">🎓</div>
-                                        <span>2nd à Tle Générale</span>
-                                    </label>
-                                </div>
-
+                            <div class="level-item">
+                                <input type="radio" name="niveau" id="lvl_cap" value="CAP">
+                                <label for="lvl_cap">
+                                    <div class="icon">🛠️</div>
+                                    <span>CAP</span>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <p>NB : Merci de bien renseignez l'ensemble des champs du formulaire. Ces informations sont
-                        essentielles
-                        pour le traitement de votre demande</p>
-                    <button type="submit" class="btnNext">Suivant</button>
+
+                    <p class="notice">
+                        <strong>NB :</strong> Merci de renseigner tous les champs. Ces informations sont essentielles pour vous proposer des filières adaptées.
+                    </p>
+
+                    <button type="submit" class="btnNext">Commencer le Test</button>
                 </form>
             </div>
+        </main>
 
-        </div>
-        <div class="screen explain">
-            <h2>Pourquoi est-ce important de le faire ?</h2>
-
-            <p>
-                Commencez par entrer les informations permet d’assurer un suivi personnalisé
-                pour l’orientation scolaire de l’enfant ou de l’élève. Ces données aident
-                à mieux comprendre son niveau académique, ses besoins et ses possibilités
-                d’évolution afin de lui proposer des filières adaptées à son profil.
-            </p>
-
-            <div class="explain-image">
-                <img src="../img/imageo.png" alt="Illustration orientation scolaire">
+        <aside class="screen explain">
+            <div class="explain-content">
+                <h2>Pourquoi est-ce important ?</h2>
+                <p>
+                    Un suivi personnalisé permet de mieux comprendre le niveau académique, 
+                    les besoins et les talents de l'enfant afin de lui proposer des filières 
+                    adaptées au système scolaire camerounais.
+                </p>
+                <div class="explain-image">
+                    <img src="../img/imageo.png" alt="Illustration orientation scolaire">
+                </div>
             </div>
-        </div>
+        </aside>
     </div>
+
     <script>
-        const suivant = document.querySelector('.btnNext');
-
-        suivant.addEventListener("click", function (e) {
-            e.preventDefault(); // important si bouton dans un form
-
+        document.getElementById('orientationForm').addEventListener("submit", function (e) {
+            e.preventDefault();
             const selected = document.querySelector('input[name="niveau"]:checked');
-
-            if (selected) {
-                console.log("Niveau choisi :", selected.value);
-
-                // Redirection vers la page suivante
-                window.location.href = "quizz.html?niveau=" + selected.value;
-
+            const name = document.querySelector('input[name="name"]').value;
+            const cep  = document.getElementById('lvl_cep').value;
+            const bepc = document.getElementById('lvl_bepc').value;
+            const cap  = document.getElementById('lvl_cap').value;
+            if (selected && name) {
+                if(selected.value === cep) {
+                 window.location.href = `quizz1.html`;
+                } else if(selected.value === bepc) {
+                 window.location.href= `#`
+                } else if(selected.value === cap) {
+                    window.location.href='#'
+                }
             } else {
-                alert("Veuillez sélectionner un niveau");
+                alert("Veuillez remplir tous les champs.");
             }
         });
     </script>
 </body>
-
 </html>

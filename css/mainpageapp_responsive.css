@@ -1,92 +1,51 @@
-@media (max-width: 1194px) {
-
+/* Tablettes et petits écrans d'ordinateurs */
+@media (max-width: 1024px) {
     #app {
-        width: 100%;
-        min-height: 190vh;
-        flex-direction: column;
+        flex-direction: column; /* On empile les écrans */
     }
 
     .screen {
-        padding: 80px 60px;
+        min-height: auto;
+        padding: 60px 20px;
     }
 
-    .form-wrapper {
-        max-width: 500px;
+    .explain {
+        order: -1; /* L'explication passe en haut sur mobile (optionnel) */
+    }
+
+    .explain-content, .form-wrapper {
+        max-width: 600px;
+        text-align: center;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .level-selection {
+        flex-direction: row; /* On garde l'alignement mais on réduit les marges */
+        gap: 8px;
+    }
+
+    .level-item label {
+        padding: 15px 5px;
+    }
+
+    #nom, #prenom {
+        display: none;
     }
 
     .explain h2 {
-        font-size: 26px;
+        font-size: 1.5rem;
     }
 
-    .explain p {
-        font-size: 14px;
-    }
-
-    .level-selection {
-
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 567px) {
-
-    .form-wrapper {
-        max-width: 100%;
-        padding: 0 20px;
-    }
-
-    .explain h2 {
-        font-size: 20px;
-    }
-
-    .explain p {
-        font-size: 10px;
-    }
-
-    .level-selection {
-
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 485px) {
-    .screen {
-        padding: 40px 20px;
-    }
-
-    .explain h2 {
-        font-size: 18px;
-    }
-
-    .level-selection {
-
-        justify-content: center;
-    }
-
-    .explain p {
-        font-size: 9px;
+    .form-wrapper h2 {
+        font-size: 1.3rem;
     }
 }
 
-@media (max-width: 412px) {
-    #app {
-        min-height: 217vh;
-    }
-
+/* Très petits téléphones */
+@media (max-width: 360px) {
     .level-selection {
-
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 396px) {
-    .level-selection {
-        flex-direction: column;
-
-        justify-content: center;
-        gap: 10px;
+        flex-direction: column; /* On empile les boutons CEP/BEPC/CAP */
     }
 }
