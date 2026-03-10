@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="level-item">
-                                <input type="radio" name="niveau" id="lvl_bepc" value="BEPC">
+                                <input type="radio" name="niveau" id="lvl_bepc" value="BEPC" required>
                                 <label for="lvl_bepc">
                                     <div class="icon">🎓</div>
                                     <span>BEPC</span>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="level-item">
-                                <input type="radio" name="niveau" id="lvl_cap" value="CAP">
+                                <input type="radio" name="niveau" id="lvl_cap" value="CAP" required>
                                 <label for="lvl_cap">
                                     <div class="icon">🛠️</div>
                                     <span>CAP</span>
@@ -89,12 +89,10 @@
                 if(selected.value === cep) {
                  window.location.href = `quizz1.html`;
                 } else if(selected.value === bepc) {
-                 window.location.href= `#`
+                 window.location.href= `quizz4.html`
                 } else if(selected.value === cap) {
-                    window.location.href='#'
+                    window.location.href='quizz7.html'
                 }
-            } else {
-                alert("Veuillez remplir tous les champs.");
             }
         });
     </script>
