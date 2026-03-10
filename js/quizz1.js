@@ -1,16 +1,11 @@
-// quizz.js — logique commune aux trois pages de quiz (quizz.html, quizz2.html, quizz3.html)
-// Les variables PHASE, PHASE_OFFSET, NEXT_PAGE et TOTAL_Q sont définies
-// dans une balise <script> inline dans chaque fichier HTML, avant ce script.
-
 // ─── Mapping des questions vers leur dimension RIASEC ──────────────────────
-// q1→q30 : chaque numéro de question (global) est associé à une dimension.
 var RIASEC_MAP = {
     z1: 'R', z2: 'R',   // Réaliste
     z3: 'I', z4: 'I',   // Investigateur
-    z15: 'A', z6: 'A',   // Artistique
+    z5: 'A', z6: 'A',   // Artistique (Corrigé : z5 au lieu de z15)
     z7: 'S', z8: 'S',   // Social
-    z9: 'E',             // Entrepreneur
-    z10: 'C',             // Conventionnel
+    z9: 'E',            // Entrepreneur
+    z10: 'C',           // Conventionnel
     z11: 'R', z12: 'R',
     z13: 'I', z14: 'I',
     z15: 'A', z16: 'A',
@@ -28,7 +23,7 @@ var RIASEC_MAP = {
 // ─── Récupération des éléments du DOM ─────────────────────────────────────
 var current = 0;
 var questions = document.querySelectorAll(".question");
-var total = questions.length; // 10 sur cette page
+var total = questions.length; 
 
 var nextBtn = document.querySelector(".next");
 var submitBtn = document.getElementById("submitBtn");
@@ -36,26 +31,28 @@ var questionNumber = document.getElementById("questionNumber");
 var progressPercent = document.getElementById("progressPercent");
 var progressBar = document.getElementById("progressBar");
 
-// ─── Mise à jour de la barre de progression globale (sur 30) ──────────────
+// ─── Mise à jour de la barre de progression ──────────────────────────────
 function updateProgress(localIndex) {
-    var globalCurrent = PHASE_OFFSET + localIndex + 1; // ex: phase 2, q0 → Q11
-    var percentage = Math.round((globalCurrent / TOTAL_Q) * 100);
+    var globalCurrent = PHASE_OFFSET + localIndex + 1;
+    var percentage = Math.round((globalCurrent / TOTAL_z) * 100);
 
-    progressBar.style.width = percentage + "%";
-    progressPercent.textContent = percentage + "%";
-    questionNumber.textContent = "Question " + globalCurrent + " / " + TOTAL_Q;
+    if (progressBar) progressBar.style.width = percentage + "%";
+    if (progressPercent) progressPercent.textContent = percentage + "%";
+    if (questionNumber) questionNumber.textContent = "Question " + globalCurrent + " / " + TOTAL_z;
 }
 
-// ─── Affichage d'une question (identique à ton code d'origine) ─────────────
+// ─── Affichage d'une question (CORRIGÉ) ──────────────────────────────────
 function showQuestion(index) {
-    questions.forEach(function (z, i) {
-        q.classList.remove("active", "exit-left");
-        if (i === index) q.classList.add("active");
+    questions.forEach(function (questionElement, i) {
+        // CORRECTION : On utilise questionElement, pas 'q' ou 'z'
+        questionElement.classList.remove("active", "exit-left");
+        if (i === index) {
+            questionElement.classList.add("active");
+        }
     });
 
     updateProgress(index);
 
-    // Dernière question de la page → bouton soumettre
     if (index === total - 1) {
         submitBtn.style.display = "inline-block";
         nextBtn.style.display = "none";
@@ -83,7 +80,7 @@ function prevQuestion() {
     }
 }
 
-// ─── Vérification qu'une réponse est cochée (ton code d'origine) ──────────
+// ─── Vérification du clic ────────────────────────────────────────────────
 function checkAnswer() {
     var inputs = questions[current].querySelectorAll("input");
     var answered = false;
@@ -100,75 +97,58 @@ function checkAnswer() {
 
 document.addEventListener("change", checkAnswer);
 
-// ─── Soumission de la phase ────────────────────────────────────────────────
+// ─── Soumission de la phase (CORRIGÉ) ──────────────────────────────────────
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Lire toutes les réponses cochées sur cette page
     var phaseAnswers = {};
-    for (var zName in RIASEC_MAP) {
-        // On ne traite que les questions de cette phase
-        var zNum = parseInt(zName.replace('z', ''));
-        if (zNum > PHASE_OFFSET && zNum <= PHASE_OFFSET + 10) {
-            var selected = document.querySelector('input[name="' + zName + '"]:checked');
-            if (selected) {
-                phaseAnswers[zName] = {
-                    value: parseInt(selected.value),
-                    dim: RIASEC_MAP[zName]
-                };
-            }
+    
+    // On récupère uniquement les questions de cette page (z1 à z10)
+    questions.forEach(function(qDiv) {
+        var radio = qDiv.querySelector('input[type="radio"]:checked');
+        if (radio) {
+            var qName = radio.name;
+            phaseAnswers[qName] = {
+                // IMPORTANT : Vos values sont du texte, on stocke 1 si c'est la réponse "Oui" (_1)
+                value: radio.id.endsWith('_1') ? 1 : 0, 
+                dim: RIASEC_MAP[qName]
+            };
         }
-    }
+    });
 
-    // Fusionner avec les réponses des phases précédentes (déjà en localStorage)
-    var allAnswers = {};
-    try {
-        var stored = localStorage.getItem("oriCeftAnswers");
-        if (stored) allAnswers = JSON.parse(stored);
-    } catch (err) { }
-
-    // Fusionner et sauvegarder
+    var allAnswers = JSON.parse(localStorage.getItem("oriCeftAnswers") || "{}");
     Object.assign(allAnswers, phaseAnswers);
     localStorage.setItem("oriCeftAnswers", JSON.stringify(allAnswers));
 
-    // Si c'est la dernière phase : calculer les scores finaux et passer aux résultats
     if (PHASE === 3) {
+        // Calculer les scores si on est à la fin
         var scores = computeRiasecScores(allAnswers);
         localStorage.setItem("oriCeftResults", JSON.stringify(scores));
-    }
-
-    if (PHASE === 3) {
-        // Phase finale : grand loading IA (30 sec) qui redirige vers resultat.html
         window.location.href = "../html/loading.html";
     } else {
-        // Phase intermediaire : minloading (5 sec) qui redirige vers la phase suivante
         localStorage.setItem("loadingNext", NEXT_PAGE);
         window.location.href = "../html/minloading.html";
     }
 });
 
-// ─── Calcul des scores RIASEC normalisés (0–100) ──────────────────────────
+// ─── Calcul des scores ───────────────────────────────────────────────────
 function computeRiasecScores(answers) {
-    var dims = ['R', 'I', 'A', 'S', 'E', 'C'];
     var raw = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
     var counts = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
 
     for (var key in answers) {
         var a = answers[key];
-        if (a && a.dim && a.value) {
-            raw[a.dim] += a.value;
-            counts[a.dim] += 1;
-        }
+        raw[a.dim] += a.value;
+        counts[a.dim] += 1;
     }
 
     var normalized = {};
-    dims.forEach(function (d) {
-        var maxPossible = counts[d] * 5;
-        normalized[d] = maxPossible > 0 ? Math.round((raw[d] / maxPossible) * 100) : 0;
+    ['R', 'I', 'A', 'S', 'E', 'C'].forEach(function (d) {
+        normalized[d] = counts[d] > 0 ? Math.round((raw[d] / counts[d]) * 100) : 0;
     });
 
-    return { answers: answers, raw: raw, normalized: normalized };
+    return { normalized: normalized };
 }
 
-// ─── Initialisation ───────────────────────────────────────────────────────
+// Lancement
 showQuestion(current);
