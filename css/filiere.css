@@ -84,7 +84,7 @@ body {
     content: "";
     bottom: -5px;
     left: -5px;
-    background-color: var(--bleu);
+    background-color: var(--teal);
     width: 0%;
     height: 1px;
     transition: 0.5s ease-in;
@@ -97,7 +97,7 @@ body {
     width: 100%;
 }
 .navlink li:hover a{
-    color: var(--bleu);
+    color: var(--teal);
 
 }
 .trynow a{
