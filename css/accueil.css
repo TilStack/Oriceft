@@ -3,7 +3,7 @@
  :root {
      --bleu: #1E5E89;
      --beige: #C7A37A;
-     --marron: #4A3B2F;
+     --marron: #4a3b2f;
      --blanc: #FFFFFF;
      --gris-clair: #F2F2F2;
      --ombre-douce: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -54,7 +54,7 @@
     left: -5px;
     background-color: var(--marron);
     width: 0%;
-    height: 1px;
+    height: 2px;
     transition: 0.5s ease-in;
     -webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
@@ -68,7 +68,11 @@
     color: var(--marron);
 
 }
-
+.navlink .page-active::after {
+     width: 100%;
+     left: 1px;
+     height: 2px;
+}
 .trynow a{
     text-decoration: none;
     color: var(--marron);
@@ -201,7 +205,6 @@
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
 }
-
 main {
     transform: translateY(50px);
     -webkit-transform: translateY(50px);
@@ -650,8 +653,8 @@ footer {
     height: 500px;
     background-size: cover;
     background-position: center;
-    animation: imgAnime 15s infinite linear;
-    -webkit-animation: imgAnime 15s infinite linear;
+    animation: imgAnime 15s steps(3)  infinite;
+    -webkit-animation: imgAnime 15s steps(3)  infinite;
 }
 @keyframes  imgAnime {
     0% {

@@ -99,9 +99,9 @@ body {
     content: "";
     bottom: -5px;
     left: -5px;
-    background-color: var(--bleu);
+    background-color: var(--marron);
     width: 0%;
-    height: 1px;
+    height: 1.5px;
     transition: 0.5s ease-in;
     -webkit-transition: 0.5s ease-in;
     -moz-transition: 0.5s ease-in;
@@ -112,7 +112,7 @@ body {
     width: 100%;
 }
 .navlink li:hover a{
-    color: var(--bleu);
+    color: var(--marron);
 
 }
 .trynow a{
@@ -276,4 +276,77 @@ body {
         -moz-transform: translateX(0px);
         -ms-transform: translateX(0px);
         -o-transform: translateX(0px);
+}
+/* navbar responsive  */
+@media (max-width:400px){
+    .navbar .trynow {
+        font-size: 0.5rem;
+     }
+}
+@media (max-width:700px) {
+    .navlink li a {
+        color: var(--blanc);
+    }
+    .navlink{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: var(--marron);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-1000px);
+        gap: 5rem;
+        transform: translateY(55px);
+        -webkit-transform: translateX(-1000px);
+        -moz-transform: translateX(-1000px);
+        -ms-transform: translateX(-1000px);
+        -o-transform: translateX(-1000px);
+        transition: 0.5s ease-out;
+        -webkit-transition: 0.5s ease-out;
+        -moz-transition: 0.5s ease-out;
+        -ms-transition: 0.5s ease-out;
+        -o-transition: 0.5s ease-out;
+}
+.navlink.active {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        color: var(--blanc);
+        background-color: #4a3b2fb9;
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0px);
+        gap: 5rem;
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
+    .navlink .mklogo {
+        position: relative;
+        left: 5rem;
+    }
+
+        .navbar .hamburgerToogle{
+            transform: translateY(-5px);
+            -webkit-transform: translateY(-5px);
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -o-transform: translateY(-5px);
+            cursor: pointer;
+}
+    .navbar .hamburgerToogle,.navbar .toContact{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
 }

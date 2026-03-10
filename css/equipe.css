@@ -10,7 +10,213 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        /* navbar */
+         header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    border-bottom: solid 5px var(--gris-clair);
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    width: 100%;
+    padding: 0 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.navlink {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    width: 60%;
+    gap: 1rem;
+}
 
+.navlink li a {
+    text-decoration: none;
+    color: var(--marron);
+    font-size: 0.9rem;
+}
+.navlink li{
+    position: relative;
+}
+.navlink li::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: -5px;
+    background-color: var(--marron);
+    width: 0%;
+    height: 2px;
+    transition: 0.5s ease-in;
+    -webkit-transition: 0.5s ease-in;
+    -moz-transition: 0.5s ease-in;
+    -ms-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+}
+.navlink li:hover::after {
+    width: 100%;
+}
+.navlink li:hover a{
+    color: var(--marron);
+
+}
+.navlink .page-active::after {
+     width: 100%;
+     left: 1px;
+     height: 2px;
+}
+.trynow a{
+    text-decoration: none;
+    color: var(--marron);
+}
+
+.trynow a:hover {
+    color: var(--blanc);
+}
+.navbar .mklogo {
+    color: var(--marron);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 100;
+
+}
+.mklogo {
+    color: var(--marron);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ori{
+    color: var(--marron);
+}
+.navbar .trynow {
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: clamp(0.7rem,1vw,1rem);
+    align-items: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    color: var(--blanc);
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    -webkit-transition: 0.5s;
+}
+.mklogo svg {
+    font-size: 5rem;
+}
+.navbar .trynow::before {
+       content: "";
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 0%;
+     height: 100%;
+     background: rgba(255, 255, 255, 0.2);
+     transition: left 0.4s ease;
+     z-index: -1;
+}
+.trynow:hover::before {
+    width: 100%;
+}
+.links {
+    display: flex;
+}
+.navbar .hamburgerToogle,.navbar .toContact{
+      width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    display: none;
+}
+.navbar .hamburgerToogle .trait::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: var(--marron);
+    box-shadow: 0 10px 0 var(--marron);
+    transform: translateY(5px);
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.navbar .hamburgerToogle .trait::before {
+         position: absolute;
+    content: "";
+    background-color: var(--marron);
+    border-radius: 5px;
+    height: 5px;
+    width: 100%;
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.navbar .hamburgerToogle.active .trait::after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    box-shadow: 0 0 0 ;
+}
+.navbar .hamburgerToogle.active .trait::before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+main {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+}
+footer {
+    transform: translateY(30px);
+}
         /* RESET & BASE */
         * {
             margin: 0;
