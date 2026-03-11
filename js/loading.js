@@ -5,7 +5,7 @@ const messages = [
     "Comparaison avec la base de données...",
     "Génération des recommandations...",
     "Optimisation des résultats...",
-    "Finalisaton du rapport..."
+    "Finalisation du rapport..."
 ];
 
 let progress = 0;
