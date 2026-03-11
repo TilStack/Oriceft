@@ -47,8 +47,9 @@ $promptFinal = "CONTEXTE DES FILIÈRES AU CAMEROUN :\n" . $catalogue . "\n\n";
 $promptFinal .= "DONNÉES ÉLÈVE : " . json_encode($donneesEleve, JSON_UNESCAPED_UNICODE) . "\n\n";
 $promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au format JSON avec la structure : { \"orientations\": [ { \"serie\": \"...\", \"pourcentage\": ..., \"debouches\": \"...\", \"debouches2\": \"...\", \"debouches3\": \"...\", \"debouches4\": \"...\", \"etablissements\": [], \"conseils_amelioration\": \"...\", \"conclusion\": \"...\" } ] }";
 
+putenv("API_KEY2=AIzaSyBbPGOtYmKwNUmp7tdpSTtXLLkahZ-qeB0");
 // 5. Configuration de l'appel à l'API Gemini
-$apiKey = "AIzaSyD3g037fqokNqQq9UJvcRI6tz5233roxE0";
+$apiKey = getenv("API_KEY2");
 // Correction de l'URL pour Gemini 1.5 Flash
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $apiKey;
 $payload = [
