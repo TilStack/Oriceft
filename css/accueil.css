@@ -658,13 +658,13 @@ footer {
 }
 @keyframes  imgAnime {
     0% {
-        background-image: url(/img/OriceftStdents1.png);
+        background-image: url(../img/OriceftStdents1.png);
 }
     50% {
-        background-image: url(/img/OriceftStudents2.png);
+        background-image: url(../img/OriceftStudents2.png);
     }
     100% {
-         background-image: url(/img/OriceftStudents3.png);
+         background-image: url(../img/OriceftStudents3.png);
     }
 }
 
