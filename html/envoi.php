@@ -37,7 +37,7 @@ $donneesEleve = [
 
 // 3. Charger le catalogue depuis le fichier externe
 // Assure-toi que le fichier "filiere.txt" est bien dans le même dossier
-if (!file_exists("filiere2.txt")) {
+if (!file_exists("filiere.txt")) {
     die("Erreur : Le fichier filiere.txt est introuvable.");
 }
 $catalogue = file_get_contents("filiere.txt");
@@ -48,9 +48,9 @@ $promptFinal .= "DONNÉES ÉLÈVE : " . json_encode($donneesEleve, JSON_UNESCAPE
 $promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au format JSON avec la structure : { \"orientations\": [ { \"serie\": \"...\", \"pourcentage\": ..., \"debouches\": \"...\", \"debouches2\": \"...\", \"debouches3\": \"...\", \"debouches4\": \"...\", \"etablissements\": [], \"conseils_amelioration\": \"...\", \"conclusion\": \"...\" } ] }";
 
 // 5. Configuration de l'appel à l'API Gemini
-$apiKey = "AIzaSyDvSYYQpMaq1s2i4i_-2cbANw4nwnU95Vc";
-// Remplacer gemini-2.5-flash par gemini-1.5-flash
-$url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
+$apiKey = "AIzaSyCmO15gXOdFgE6MWdIuWBbLItr-xnM9GHw";
+// Correction de l'URL pour Gemini 1.5 Flash
+$url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $apiKey;
 $payload = [
     "contents" => [
         ["parts" => [["text" => $promptFinal]]]
