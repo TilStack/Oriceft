@@ -49,7 +49,7 @@ $promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au forma
 
 // 5. Configuration de l'appel à l'API Gemini
 $apiKey = "AIzaSyCmO15gXOdFgE6MWdIuWBbLItr-xnM9GHw";
-// Remplacer gemini-2.5-flash par gemini-1.5-flash
+// Correction de l'URL pour Gemini 1.5 Flash
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
 $payload = [
     "contents" => [
