@@ -1,5 +1,5 @@
 <?php 
-  // On récupère l'ID pour le passer au JS plus bas
+
   $user_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 ?>
 <!DOCTYPE html>

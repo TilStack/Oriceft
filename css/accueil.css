@@ -648,27 +648,25 @@ footer {
     font-size: 0.9rem;
     font-weight: 300;
 }
-
-.img img{
-    width: 550px;
-    height: 550px;
-}
-
+ .img img{
+        width: 550px;
+        height: 550px;
+    }
 @media (max-width:412px) {
-    .img img {
+    .img img{
         width: 400px;
         height: 400px;
     }
-}/*
-@keyframes  imgAnime {
+}
+/* @keyframes  imgAnime {
     0% {
-        background-image: url(/img/OriceftStdents1.png);
+        background-image: url(../img/OriceftStdents1.png);
 }
     50% {
-        background-image: url(/img/OriceftStudents2.png);
+        background-image: url(../img/OriceftStudents2.png);
     }
     100% {
-         background-image: url(/img/OriceftStudents3.png);
+         background-image: url(../img/OriceftStudents3.png);
     }
 } */
 
