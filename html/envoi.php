@@ -37,7 +37,7 @@ $donneesEleve = [
 
 // 3. Charger le catalogue depuis le fichier externe
 // Assure-toi que le fichier "filiere.txt" est bien dans le même dossier
-if (!file_exists("filiere.txt")) {
+if (!file_exists("filiere2.txt")) {
     die("Erreur : Le fichier filiere.txt est introuvable.");
 }
 $catalogue = file_get_contents("filiere.txt");
