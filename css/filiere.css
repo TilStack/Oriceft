@@ -259,7 +259,7 @@ body {
     position: relative;
     background: var(--teal);
     overflow: hidden;
-    padding: 4.5rem 2rem 3.5rem;
+    padding: 8rem 2rem;
     text-align: center;
 }
 
