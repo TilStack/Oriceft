@@ -19,6 +19,7 @@
     --font-display: 'Space Grotesk', sans-serif;
 }
 :root {
+    --marron: #4a3b2f;
     --teal: #4a3b2f;
     --teal-dark: #4a3b2f;
     --teal-light: #c7a37a;
@@ -47,7 +48,7 @@ html {
 body {
     font-family: var(--font-body);
     background: var(--off-white);
-    color: var(--slate);
+    /* color: var(--white); */
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -317,7 +318,7 @@ body {
         height: 100vh;
         top: 0;
         left: 0;
-        color: var(--blanc);
+        color: var(--bg);
         background-color: #4a3b2fb9;
         backdrop-filter: blur(5px);
         display: flex;

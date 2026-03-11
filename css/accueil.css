@@ -653,8 +653,8 @@ footer {
     height: 500px;
     background-size: cover;
     background-position: center;
-    animation: imgAnime 15s steps(3)  infinite;
-    -webkit-animation: imgAnime 15s steps(3)  infinite;
+    animation: imgAnime 10s steps(3)  infinite;
+    -webkit-animation: imgAnime 10s steps(3)  infinite;
 }
 @keyframes  imgAnime {
     0% {
