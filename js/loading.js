@@ -21,25 +21,29 @@ function lancerAnalyseIA() {
     }
 
   fetch(`envoi.php?id=${USER_ID}`)
-        .then(response => {
-            if (!response.ok) {
-                // Si le serveur renvoie une erreur (429 quota, 500 erreur php)
-                throw new Error("Erreur serveur lors de l'analyse");
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Analyse réussie :", data);
-            window.location.href = `resultat.php?id=${USER_ID}`;
-        })
-        .catch(error => {
-            console.error("Erreur :", error);
-            // On affiche l'erreur sur la page de chargement au lieu de rediriger dans le vide
-            text.style.color = "red";
-            text.textContent = "Erreur : " + error.message + ". Veuillez réessayer.";
-            // On arrête la barre de progression
-            clearInterval(interval);
-        });
+    .then(async response => {
+        const textData = await response.text(); // On récupère d'abord le texte brut
+        try {
+            return JSON.parse(textData); // On essaie de transformer en JSON
+        } catch (e) {
+            // Si ce n'est pas du JSON, c'est l'erreur PHP brute !
+            throw new Error("Réponse serveur invalide : " + textData);
+        }
+    })
+    .then(data => {
+        if (data.error) {
+            throw new Error(data.error);
+        }
+        console.log("Analyse réussie :", data);
+        window.location.href = `resultat.php?id=${USER_ID}`;
+    })
+    .catch(error => {
+        console.error("Erreur détaillée :", error);
+        text.style.color = "#e74c3c";
+        text.style.fontWeight = "bold";
+        text.textContent = error.message;
+        clearInterval(interval);
+    });
 }
 
 lancerAnalyseIA();

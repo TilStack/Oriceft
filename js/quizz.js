@@ -4,7 +4,7 @@
 
 // ─── Mapping des questions vers leur dimension RIASEC ──────────────────────
 // q1→q30 : chaque numéro de question (global) est associé à une dimension.
-va RIASEC_MAP = {
+var RIASEC_MAP = {
     q1: 'R', q2: 'R',   // Réaliste
     q3: 'I', q4: 'I',   // Investigateur
     q5: 'A', q6: 'A',   // Artistique
