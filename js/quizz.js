@@ -85,11 +85,20 @@ function prevQuestion() {
 
 // ─── Vérification qu'une réponse est cochée (ton code d'origine) ──────────
 function checkAnswer() {
-    var inputs = questions[current].querySelectorAll("input");
+
     var answered = false;
-    inputs.forEach(function (input) {
-        if (input.checked) answered = true;
+
+    // vérifier radio
+    var radios = questions[current].querySelectorAll("input[type=radio]");
+    radios.forEach(function(radio){
+        if(radio.checked) answered = true;
     });
+
+    // vérifier select
+    var select = questions[current].querySelector("select");
+    if(select && select.value !== ""){
+        answered = true;
+    }
 
     if (current === total - 1) {
         submitBtn.disabled = !answered;
@@ -97,55 +106,10 @@ function checkAnswer() {
         nextBtn.disabled = !answered;
     }
 }
-
 document.addEventListener("change", checkAnswer);
 
 // ─── Soumission de la phase ────────────────────────────────────────────────
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Lire toutes les réponses cochées sur cette page
-    var phaseAnswers = {};
-    for (var qName in RIASEC_MAP) {
-        // On ne traite que les questions de cette phase
-        var qNum = parseInt(qName.replace('q', ''));
-        if (qNum > PHASE_OFFSET && qNum <= PHASE_OFFSET + 10) {
-            var selected = document.querySelector('input[name="' + qName + '"]:checked');
-            if (selected) {
-                phaseAnswers[qName] = {
-                    value: parseInt(selected.value),
-                    dim: RIASEC_MAP[qName]
-                };
-            }
-        }
-    }
-
-    // Fusionner avec les réponses des phases précédentes (déjà en localStorage)
-    var allAnswers = {};
-    try {
-        var stored = localStorage.getItem("oriCeftAnswers");
-        if (stored) allAnswers = JSON.parse(stored);
-    } catch (err) { }
-
-    // Fusionner et sauvegarder
-    Object.assign(allAnswers, phaseAnswers);
-    localStorage.setItem("oriCeftAnswers", JSON.stringify(allAnswers));
-
-    // Si c'est la dernière phase : calculer les scores finaux et passer aux résultats
-    if (PHASE === 3) {
-        var scores = computeRiasecScores(allAnswers);
-        localStorage.setItem("oriCeftResults", JSON.stringify(scores));
-    }
-
-    if (PHASE === 3) {
-        // Phase finale : grand loading IA (30 sec) qui redirige vers resultat.html
-        window.location.href = "../html/loading.html";
-    } else {
-        // Phase intermediaire : minloading (5 sec) qui redirige vers la phase suivante
-        localStorage.setItem("loadingNext", NEXT_PAGE);
-        window.location.href = "../html/minloading.html";
-    }
-});
+ 
 
 // ─── Calcul des scores RIASEC normalisés (0–100) ──────────────────────────
 function computeRiasecScores(answers) {
@@ -172,3 +136,117 @@ function computeRiasecScores(answers) {
 
 // ─── Initialisation ───────────────────────────────────────────────────────
 showQuestion(current);
+let radios = document.querySelectorAll("input[type=radio]");
+let selects = document.querySelectorAll("select");
+
+selects.forEach(function(select){
+    select.addEventListener("change", function(){
+        nextBtn.disabled = false;
+        checkAnswer();
+    });
+});
+
+radios.forEach(function(radio){
+
+    radio.addEventListener("change", function(){
+        nextBtn.disabled = false;
+    });
+
+});
+
+nextBtn.addEventListener("click", function(){
+
+let selectedRadio = questions[current].querySelector("input[type=radio]:checked");
+let selectedSelect = questions[current].querySelector("select");
+
+let question;
+let value;
+
+if(selectedRadio){
+    question = selectedRadio.name;
+    value = selectedRadio.value;
+}
+else if(selectedSelect && selectedSelect.value !== ""){
+    question = selectedSelect.name;
+    value = selectedSelect.value;
+}
+else{
+    return;
+}
+
+
+
+
+fetch("save_answer.php",{
+
+method:"POST",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+
+body:"question="+question+
+"&value="+value+
+"&id="+USER_ID+
+"&quizz="+quizz
+
+})
+.then(res=>res.text())
+.then(data=>{
+
+if(current < total-1){
+
+nextQuestion();
+nextBtn.disabled = true;
+
+}else{
+
+localStorage.setItem("loadingNext", NEXT_PAGE);
+window.location.href="../html/minloading.php?id="+USER_ID;
+
+}
+
+});
+
+});
+
+
+
+submitBtn.addEventListener("click", function(){
+
+let selected = questions[current].querySelector("input[type=radio]:checked");
+
+if(!selected) return;
+
+let question = selected.name;
+let value = selected.value;
+
+fetch("save_answer.php",{
+
+method:"POST",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+
+body:new URLSearchParams({
+question: question,
+value: value,
+id: USER_ID,
+quizz: quizz
+})
+
+})
+.then(res=>res.text())
+.then(data=>{
+
+localStorage.setItem("loadingNext", NEXT_PAGE);
+if((quizz==3) || (quizz==6) || (quizz == 9)){
+window.location.href="../html/loading.php?id="+USER_ID;
+}
+
+else{
+    window.location.href="../html/minloading.php?id="+USER_ID;
+}
+
+});
+
+});
