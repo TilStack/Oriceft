@@ -52,7 +52,7 @@
     content: "";
     bottom: -5px;
     left: -5px;
-    background-color: var(--bleu);
+    background-color: var(--marron);
     width: 0%;
     height: 1px;
     transition: 0.5s ease-in;
@@ -65,7 +65,7 @@
     width: 100%;
 }
 .navlink li:hover a{
-    color: var(--bleu);
+    color: var(--marron);
 
 }
 
@@ -395,6 +395,7 @@ footer {
      justify-content: center;
      align-items: center;
      animation: float 6s infinite alternate ease-in-out;
+     background: transparent;
  }
 
  /* Features */
@@ -643,5 +644,24 @@ footer {
     color: var(--marron);
     font-size: 0.9rem;
     font-weight: 300;
+}
+.hero-illustration .img {
+    width: 400px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    animation: imgAnime 15s infinite linear;
+    -webkit-animation: imgAnime 15s infinite linear;
+}
+@keyframes  imgAnime {
+    0% {
+        background-image: url(/img/OriceftStdents1.png);
+}
+    50% {
+        background-image: url(/img/OriceftStudents2.png);
+    }
+    100% {
+         background-image: url(/img/OriceftStudents3.png);
+    }
 }
 

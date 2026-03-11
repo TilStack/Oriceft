@@ -5,13 +5,31 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+.navlink li{
+    position: relative;
+}
+.navlink li::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: -5px;
+    background-color: var(--primary);
+    width: 0%;
+    height: 1px;
+    transition: 0.5s ease-in;
+    -webkit-transition: 0.5s ease-in;
+    -moz-transition: 0.5s ease-in;
+    -ms-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+}
+.navlink li:hover::after {
+    width: 100%;
+}
 .hero {
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
     padding: 56px 24px;
     text-align: center;
 }
-
 .hero h1 {
     font-family: var(--font-display);
     font-size: 2.4rem;
