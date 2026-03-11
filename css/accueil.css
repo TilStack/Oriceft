@@ -648,14 +648,18 @@ footer {
     font-size: 0.9rem;
     font-weight: 300;
 }
-.hero-illustration .img {
-    width: 400px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    animation: imgAnime 10s steps(3)  infinite;
-    -webkit-animation: imgAnime 10s steps(3)  infinite;
+
+.img img{
+    width: 550px;
+    height: 550px;
 }
+
+@media (max-width:412px) {
+    .img img {
+        width: 400px;
+        height: 400px;
+    }
+}/*
 @keyframes  imgAnime {
     0% {
         background-image: url(/img/OriceftStdents1.png);
@@ -666,5 +670,5 @@ footer {
     100% {
          background-image: url(/img/OriceftStudents3.png);
     }
-}
+} */
 
