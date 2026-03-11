@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orientation Scolaire - Cameroun</title>
-    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />
     <link rel="stylesheet" href="../css/mainpageapp.css">
     <link rel="stylesheet" href="../css/mainpageapp_responsive.css">
 </head>
@@ -13,7 +13,7 @@
         <main class="screen connect">
             <div class="form-wrapper">
                 <h2>Remplissez les informations</h2>
-                <form id="orientationForm">
+                <form id="orientationForm" method="get" action="../php/traitement1.php">
                     <div class="input-group">
                         <label for="name" id="nom">Nom :</label>
                         <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="level-item">
-                                <input type="radio" name="niveau" id="lvl_bepc" value="BEPC" required>
+                                <input type="radio" name="niveau" id="lvl_bepc" value="BEPC">
                                 <label for="lvl_bepc">
                                     <div class="icon">🎓</div>
                                     <span>BEPC</span>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="level-item">
-                                <input type="radio" name="niveau" id="lvl_cap" value="CAP" required>
+                                <input type="radio" name="niveau" id="lvl_cap" value="CAP">
                                 <label for="lvl_cap">
                                     <div class="icon">🛠️</div>
                                     <span>CAP</span>
@@ -57,7 +57,7 @@
                         <strong>NB :</strong> Merci de renseigner tous les champs. Ces informations sont essentielles pour vous proposer des filières adaptées.
                     </p>
 
-                    <button type="submit" class="btnNext">Commencer le Test</button>
+                    <button type="submit" name="send" class="btnNext">Commencer le Test</button>
                 </form>
             </div>
         </main>
@@ -77,22 +77,19 @@
         </aside>
     </div>
 
-    <script>
+ <script>
         document.getElementById('orientationForm').addEventListener("submit", function (e) {
             e.preventDefault();
             const selected = document.querySelector('input[name="niveau"]:checked');
             const name = document.querySelector('input[name="name"]').value;
+            const surname = document.querySelector('input[name="surname"]').value;
             const cep  = document.getElementById('lvl_cep').value;
             const bepc = document.getElementById('lvl_bepc').value;
             const cap  = document.getElementById('lvl_cap').value;
             if (selected && name) {
-                if(selected.value === cep) {
-                 window.location.href = `quizz1.html`;
-                } else if(selected.value === bepc) {
-                 window.location.href= `quizz4.html`
-                } else if(selected.value === cap) {
-                    window.location.href='quizz7.html'
-                }
+        document.getElementById('orientationForm').submit();
+            } else {
+                alert("Veuillez remplir tous les champs.");
             }
         });
     </script>

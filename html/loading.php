@@ -1,17 +1,20 @@
+<?php 
+  // On récupère l'ID pour le passer au JS plus bas
+  $user_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <title>Analyse IA...</title>
     <link rel="stylesheet" href="../css/loading.css">
-    <link rel="shortcut icon" href="/img/logo.svg" type="image/svg+xml">
+    <script>
+        // On crée une variable globale accessible par loading.js
+        const USER_ID = <?php echo $user_id; ?>;
+    </script>
 </head>
-
 <body>
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Google-gemini-icon.svg" class="logo gemini">
-
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Google-gemini-icon.svg" class="logo">
     <h2>Analyse intelligente en cours...</h2>
 
     <div class="progress-container">
@@ -23,7 +26,5 @@
     </div>
 
     <script src="../js/loading.js"></script>
-
 </body>
-
 </html>
