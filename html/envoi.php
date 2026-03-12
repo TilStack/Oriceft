@@ -51,6 +51,9 @@ $promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au forma
 Tu DOIS proposer EXACTEMENT 6 filières différentes classées par pertinence.
 Structure attendue : { \"interpretation_profil\": \"...\", \"conclusion_generale\": \"...\", \"orientations\": [ ... 6 objets ici ... ] }";
 putenv("API_KEY=AIzaSyDhifWGtNOnnNP8lMny4Qe0Vzgx_7WuMWM");
+putenv("API_KEY2=AIzaSyAHPQNFub8-OsMcOWvMz5L9ex5dPuC0ffc");
+putenv("API_KEY3=AIzaSyCzqZbUQwT91teX5o3uW7EEfVldPBQc_eM");
+putenv("API_KEY4=AIzaSyDC42saZjwaQQHk02bk8sx6ZCmKYEtL8ck");
 // 5. Configuration de l'appel à l'API Gemini
 $apiKey = getenv("API_KEY");
 // Correction de l'URL pour Gemini 1.5 Flash

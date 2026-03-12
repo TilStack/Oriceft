@@ -36,6 +36,13 @@ if (!$user || !$orientations) {
     </script>
 </head>
 <body>
+    <div class="print-only-header" style="display: none;">
+    <div style="text-align: center; border-bottom: 2px solid #1a1a2e; padding-bottom: 10px; margin-bottom: 20px;">
+        <h1 style="font-size: 28px; margin-bottom: 5px;">RAPPORT D'ORIENTATION ORICEFT</h1>
+        <h2 style="font-size: 18px; color: #333;">Résultats de : <?php echo htmlspecialchars($user['nom'] . ' ' . $user['prenom']); ?></h2>
+        <p>Date de génération : <?php echo date('d/m/Y'); ?></p>
+    </div>
+</div>
     <header>
         <div class="navbar">
             <div class="mklogo">
@@ -58,7 +65,7 @@ if (!$user || !$orientations) {
             </div>
         </div>
     </header>
-
+ 
 <div class="hero">
     <div class="hero-tag">✦ Résultats pour <?php echo htmlspecialchars($user['nom'] . ' ' . $user['prenom']); ?></div>
     <h1 id="heroTitle">Analyse terminée</h1>
@@ -97,8 +104,7 @@ if (!$user || !$orientations) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px;">Interprétation de votre profil</h2>
         
         <div style="line-height: 1.8; font-size: 1rem; color: #cbd5e0; position: relative; z-index: 2;">
-            <?php 
-                // Récupération du champ interpretation_profil depuis la BDD
+            <?php  
                 $interpretation = !empty($orientations[0]['interpretation_profil']) 
                                   ? $orientations[0]['interpretation_profil'] 
                                   : "Analyse en cours de finalisation...";
@@ -186,7 +192,7 @@ if (!$user || !$orientations) {
                <br>
           <center><i> <h4 class="errorGemini" style="color: gray;">
                NB:  Ce résultat a été fourni pas Gemini, et en tant que IA, Gemini peut faire des erreurs donc avant de prendre en considération ces résultas, nous vous conseillons de vérifier auprès d'un conseiller d'orientation pour plus de précision. </h4> </i><br><br>
-             <p> Si ce résultat ne vous convient pas vous pouvez toujours refaire le test en cliquant sur le bouton "Refaire le test" ci-dessous.</p> 
+             <p class="p"> Si ce résultat ne vous convient pas vous pouvez toujours refaire le test en cliquant sur le bouton "Refaire le test" ci-dessous.</p> 
                      </center>
         </div>
         <div class="bottom-actions">

@@ -750,3 +750,44 @@ header {
         grid-template-columns: 1fr !important;
     }
 }
+@media print {
+    /* 1. ON CACHE LE HERO ET LES ÉLÉMENTS WEB QUI BUGGENT */
+    header, footer, .navbar, .hero, .trynow, .bottom-actions, button, .hero-tag {
+        display: none !important;
+    }
+
+    /* 2. ON AFFICHE NOTRE EN-TÊTE SPÉCIAL PDF */
+    .print-only-header {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+    }
+
+    /* 3. RESET DU CORPS DE PAGE */
+    body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 4. ON FORCE LE CONTENU EN UNE SEULE COLONNE */
+    .analysis-container, .filiere-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .profile-card, .interpretation-card, .filiere-card {
+        width: 100% !important;
+        margin-bottom: 40px !important;
+        border: 1px solid #eee !important;
+        box-shadow: none !important;
+        padding: 20px !important;
+        page-break-inside: avoid; /* Très important pour ne pas couper les blocs */
+    }
+
+    /* 5. COULEURS */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
