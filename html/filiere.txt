@@ -396,9 +396,60 @@ Question 30 — Es-tu prêt à donner le meilleur pour ton examen cette année ?
   
 
 1-RESULTAT DE TA REPONSE :
-  Tu vas afficher le résultat en donnant par pourcentage  l’orientation propice à l’élève également en fonction du niveau qu’il aura entré (CEP, BEPC, CAP) et tu donneras en ajout tous les débouchés qui y sont appropriés ceci à travers les documents ci-dessus, et ton expertise en orientation, tu donneras aussi  les établissements du Cameroun ayant la filière que tu auras proposé (voir le document). Tous les résultats seront affichés en JSON selon la structure suivante :
+  Tu vas afficher le résultat en donnant par pourcentage  l’orientation propice à l’élève également en fonction du niveau qu’il aura entré (CEP, BEPC, CAP) et tu donneras en ajout tous les débouchés qui y sont appropriés ceci à travers les documents ci-dessus, et ton expertise en orientation, tu donneras aussi  les établissements du Cameroun ayant la filière que tu auras proposé (voir le document). Et une conclusion qui dira  : D’après une analyse faite, donne une conclusion brève et précise en précisant la filière la plus adaptée.Tu dois être précis, concis et professionnel et donner tous les détails nécessaires à la compréhension de la filière. 
+ 
+tu vas renvoyer les résultats sous cette forme:
 {
-  "orientations": [{"serie": "Nom de la filière", "pourcentage": 0, "debouches": "Description claire des débouchés universitaires et professionnels", "debouches2": "Description claire des débouchés universitaires et professionnels", "debouches3": "Description claire des débouchés universitaires et professionnels", "debouches4": "Description claire des débouchés universitaires et professionnels", "etablissements": [ "Nom établissement 1", "Nom établissement 2","Nom établissement 3" ], "conseils_amelioration": "Conseils si l'élève a une faiblesse dans une matière importante", ‘’De manière à ce qu’il soit très bref’’ }, {      "serie": "Deuxième meilleurefilière",      "pourcentage": 0, "debouches": "Description...","etablissements": [ "Nom établissement 1",  "Nom établissement 2" ], "conseils_amelioration": "Conseils..." }, {  "serie": "Troisième meilleure filière", "pourcentage": 0, "debouches": "Description...", "etablissements": [  "Nom établissement 1",  "Nom établissement 2"  ], "conseils_amelioration" : "Conseils..."}, {  "serie": "Quatrième meilleure filière", "pourcentage": 0, "debouches": "Description...", "etablissements": [  "Nom établissement 1",  "Nom établissement 2"  ], "conseils_amelioration" : "Conseils..."} , ‘’conclusion’’ :‘D’après une analyse faite, donne une conclusion brève et précise en précisant la filière la plus adaptée  ’ }  ]}.Tu dois être précis, concis et professionnel et donner tous les détails nécessaires à la compréhension de la filière. 
+  "orientations": [
+    {
+      "serie": "Nom de la filière",
+      "pourcentage": 0,
+      "debouches": "Description claire des débouchés universitaires et professionnels",
+      "etablissements": [
+        "Nom établissement 1",
+        "Nom établissement 2",
+        "Nom établissement 3"
+      ],
+      "conseils_amelioration": "Conseils très brefs si l'élève a une faiblesse dans une matière importante"
+    },
+    {
+      "serie": "Deuxième meilleure filière",
+      "pourcentage": 0,
+      "debouches": "Description...",
+      "etablissements": [
+        "Nom établissement 1",
+        "Nom établissement 2"
+      ],
+      "conseils_amelioration": "Conseils..."
+    },
+    {
+      "serie": "Troisième meilleure filière",
+      "pourcentage": 0,
+      "debouches": "Description...",
+      "etablissements": [
+        "Nom établissement 1",
+        "Nom établissement 2"
+      ],
+      "conseils_amelioration": "Conseils..."
+    },
+    {
+      "serie": "Quatrième meilleure filière",
+      "pourcentage": 0,
+      "debouches": "Description...",
+      "etablissements": [
+        "Nom établissement 1",
+        "Nom établissement 2"
+      ],
+      "conseils_amelioration": "Conseils..."
+    }
+  ],
+  "interpretation_profil": "Interpretation du profil de l'utilisateur en fonction de ses reponses.",
+  "conclusion_generale": "D’après l’analyse, donner une conclusion brève et préciser la filière la plus adaptée."
+}
+
 Les réponses de l’utilisateur sont à la suite ou avant ce prompt. Bon boulot ! 
 NB : Cette requête que tu donneras sera utilisée dans un site Web.
+
+ Analyse et propose 6 filières adaptées au format JSON...
+
 

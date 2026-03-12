@@ -45,9 +45,12 @@ $catalogue = file_get_contents("filiere.txt");
 // 4. Préparation du prompt pour l'IA
 $promptFinal = "CONTEXTE DES FILIÈRES AU CAMEROUN :\n" . $catalogue . "\n\n";
 $promptFinal .= "DONNÉES ÉLÈVE : " . json_encode($donneesEleve, JSON_UNESCAPED_UNICODE) . "\n\n";
-$promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au format JSON avec la structure : { \"orientations\": [ { \"serie\": \"...\", \"pourcentage\": ..., \"debouches\": \"...\", \"debouches2\": \"...\", \"debouches3\": \"...\", \"debouches4\": \"...\", \"etablissements\": [], \"conseils_amelioration\": \"...\", \"conclusion\": \"...\" } ] }";
 
-putenv("API_KEY=AIzaSyBWKV6p54nKSrLL1eKDAF2atYk2UXrzvxA");
+// AJOUTE BIEN "EXACTEMENT 6 FILIÈRES" ICI :
+$promptFinal .= "CONSIGNE : Analyse le profil et réponds EXCLUSIVEMENT au format JSON. 
+Tu DOIS proposer EXACTEMENT 6 filières différentes classées par pertinence.
+Structure attendue : { \"interpretation_profil\": \"...\", \"conclusion_generale\": \"...\", \"orientations\": [ ... 6 objets ici ... ] }";
+putenv("API_KEY=AIzaSyDhifWGtNOnnNP8lMny4Qe0Vzgx_7WuMWM");
 // 5. Configuration de l'appel à l'API Gemini
 $apiKey = getenv("API_KEY");
 // Correction de l'URL pour Gemini 1.5 Flash
@@ -95,53 +98,48 @@ if(isset($result["error"])) {
 $iaText = $result["candidates"][0]["content"]["parts"][0]["text"] ?? null;
 
 if ($iaText) {
-    $dataOrientation = json_decode(trim($iaText), true);
+    $data = json_decode(trim($iaText), true);
 
-    if (isset($dataOrientation['orientations']) && is_array($dataOrientation['orientations'])) {
-        
+    if (isset($data['orientations'])) {
+        // Nettoyage des anciens résultats pour cet utilisateur
+        $connexion->prepare("DELETE FROM resultats_orientation WHERE id_user = ?")->execute([$id]);
+
         $insert = $connexion->prepare("
             INSERT INTO resultats_orientation 
-            (id_user, serie, pourcentage, debouches, debouches2, debouches3, debouches4, etablissements, conseils_amelioration, conclusion) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (id_user, serie, pourcentage, debouches, debouches2, debouches3, debouches4, etablissements, conseils_amelioration, conclusion, interpretation_profil) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
 
-        $compteur = 0;
-        foreach ($dataOrientation['orientations'] as $filiere) {
-            if ($compteur >= 3) break; // On ne garde que les 3 meilleures propositions
+        // On récupère les textes globaux
+        $conclusion = $data['conclusion_generale'] ?? "";
+        $interpretation = $data['interpretation_profil'] ?? "";
 
-            $etablissements = (isset($filiere['etablissements']) && is_array($filiere['etablissements'])) 
-                ? implode(", ", $filiere['etablissements']) 
-                : "";
+        foreach ($data['orientations'] as $index => $filiere) {
+    if ($index >= 6) break;
 
-            $insert->execute([
-                $id,
-                $filiere['serie'] ?? "Non spécifié",
-                $filiere['pourcentage'] ?? 0,
-                $filiere['debouches'] ?? "",
-                $filiere['debouches2'] ?? "",
-                $filiere['debouches3'] ?? "",
-                $filiere['debouches4'] ?? "",
-                $etablissements,
-                $filiere['conseils_amelioration'] ?? "",
-                $filiere['conclusion'] ?? ""
-            ]);
-            $compteur++;
-        }
+    $etablissements = is_array($filiere['etablissements'] ?? null) 
+        ? implode(", ", $filiere['etablissements']) 
+        : "";
 
-        
+    // Utilisation de ?? "" pour éviter les "Undefined index"
+    $insert->execute([
+        $id,
+        $filiere['serie'] ?? "Non spécifié",
+        $filiere['pourcentage'] ?? 0,
+        $filiere['debouches'] ?? "",
+        $filiere['debouches2'] ?? "", // Correction ici
+        $filiere['debouches3'] ?? "", // Correction ici
+        $filiere['debouches4'] ?? "", // Correction ici
+        $etablissements,
+        $filiere['conseils_amelioration'] ?? "",
+        $conclusion,
+        $interpretation
+    ]);
+}
         header('Content-Type: application/json');
         echo json_encode(["status" => "success"]);
-        exit;
-        
-    } else {
-      
-        header('HTTP/1.1 500 Internal Server Error');
-        echo json_encode(["error" => "Format JSON IA invalide"]);
-        exit;
     }
 } else {
-    header('HTTP/1.1 500 Internal Server Error');
-    echo json_encode(["error" => "Aucune reponse IA"]);
-    exit;
+    echo json_encode(["error" => "Erreur IA", "details" => $response]);
 }
 ?>
